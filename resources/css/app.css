@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+      ul, ol {
+        list-style: revert;
+      }
+      
+      h1{
+        font-size: revert;
+      }
+    }
+
