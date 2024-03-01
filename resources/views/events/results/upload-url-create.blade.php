@@ -6,26 +6,27 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 bg-rd-500">
 
-                   <x-event-navbar :event="$event" />
 
                     @if (session('error'))
                         @if(session('error') == 'registration_required')
-                            @php $error = 'Nahrávat výsledky je možné až poté, co se k závodu <a class="underline" href="'.route('registration.create',$event->id).'">zaregistrujete</a>'; @endphp
+                            @php $error = 'Nahrávat výsledky je možné až poté, co se k závodu zaregistrujete'; @endphp
                         @else
                             @php $error = session('error') @endphp
                         @endif
 
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-2">{!!$error!!}</div>
                     @endif
+
+
                     <div class="mt-10">
                         <div>Vložte odkaz ze Stravy podle pokynů níže:</div>
                             <form class="border  border-blue-400 rounded-md p-4 bg-slate-50" action="{{ route('event.upload.store.url',$event->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="flex space-x-1">
-                                    <input type="text" name="strava_url" class="w-full border border-blue-400 rounded-md py-[9px]">
+                                    <input type="text" name="strava_url" class="w-full border border-gray-400 rounded-md py-[9px]">
 
-                                    <button type="submit" class="flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded-md">
-                                        Nahrát
+                                    <button type="submit" class="flex items-center justify-center bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-1 rounded-md w-1/5">
+                                        Upload link
                                     </button>
                                 </div>
                             </form>

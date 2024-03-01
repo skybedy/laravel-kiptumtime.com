@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>virtual-run.cz @yield('title')</title>
+        <title>kiptumtime@yield('title')</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -52,13 +52,13 @@ input[type=file]::file-selector-button:hover {
 
     </head>
     <body class="font-sans antialiased">
-        <div class="min-h-screen sm:bg-slate-200">
+        <div class="min-h-screen">
+
             @include('layouts.navigation')
 
 
             <!-- Page Content -->
             <main>
-                <div class="bg-blue-400 text-white font-black py-2 text-center border-y  border-blue-500 mt-2 shadow-lg">Aplikace je zatím v testovacím režimu.</div>
 
                 {{ $slot }}
             </main>

@@ -12,18 +12,28 @@ class ResultController extends Controller
 {
     public function index(Request $request, Result $result)
     {
-        dd($result->resultsOverall($request->eventId));
+        //dd($result->resultsOverall($request->eventId));
 
-        return view('result.index');
+       // return view('result.index');
     }
 
     public function manage(Request $request,Result $result)
     {
         return view('result.manage', [
+
             'results' => $result->getAllUserResults($request->user()->id)
+
         ]);
     }
 
+    public function delete(Request $request)
+    {
+        TrackPoint::where('result_id', $request->resultId)->delete();
+
+        Result::find($request->resultId)->delete();
+
+        return back();
+    }
 
 
 

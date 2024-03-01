@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 use Laravel\Socialite\Facades\Socialite;
+use PeterColes\Countries\CountriesFacade as Countries;
+
 
 class RegisteredProviderUserController extends Controller
 {
@@ -32,6 +34,8 @@ class RegisteredProviderUserController extends Controller
             'provider' => $request->provider,
             'first_year' => date('Y') - 99,
             'last_year' => date('Y') - 18,
+            'countries' => Countries::lookup(),
+
         ]);
     }
 
@@ -56,7 +60,7 @@ class RegisteredProviderUserController extends Controller
         $request->validate([
             'lastname' => 'required|string|max:255',
             'firstname' => 'required|string|max:255',
-            'team' => 'max:255',
+            'country' => 'required',
             'gender' => 'required',
             'birth_year' => 'required',
             'email' => 'required|string|email|max:255|unique:'.User::class,
@@ -67,6 +71,7 @@ class RegisteredProviderUserController extends Controller
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
             'team' => $request->team,
+            'country' => $request->country,
             'gender' => $request->gender,
             'birth_year' => $request->birth_year,
             'email' => $request->email,
@@ -88,8 +93,6 @@ class RegisteredProviderUserController extends Controller
      */
     public function redirectToProvider(string $provider)
     {
-
-        //dd($provider);
         return Socialite::driver($provider)->redirect();
     }
 

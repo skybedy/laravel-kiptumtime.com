@@ -12,12 +12,12 @@ class Category extends Model
         if ($age > 100) {
             return self::where('gender', $gender)
                 ->where('open', '=', 1)
-                ->first('id');
+                ->value('id');
         } else {
             return self::where('gender', $gender)
                 ->where('age_start', '<=', $age)
                 ->where('age_end', '>=', $age)
-                ->first('id');
+                ->value('id');
         }
 
     }

@@ -33,15 +33,16 @@ class Result extends Model
     {
         $sql = "SELECT
         r1.registration_id,
-        SUBSTRING(r1.finish_time,2) AS best_finish_time,
-        r1.finish_time_sec as best_finish_time_sec,
-        DATE_FORMAT(r1.finish_time_date,'%e.%c.') AS date,
-        r1.pace,
+        r1.finish_time_date AS date,
+        r1.finish_distance_km,
+        r1.pace_km,
+        r1.finish_distance_mile,
+        r1.pace_mile,
         r1.id,
         r.category_id,
         u.lastname,
         u.firstname,
-        u.team,
+        u.country,
         c.name AS category_name,
         counts.count
     FROM results r1
@@ -54,12 +55,12 @@ class Result extends Model
         GROUP BY registration_id
     ) counts ON r1.registration_id = counts.registration_id
     WHERE
-        r1.finish_time = (
-            SELECT MIN(r2.finish_time)
+        r1.finish_distance_km = (
+            SELECT MAX(r2.finish_distance_km)
             FROM results r2
             WHERE r1.registration_id = r2.registration_id
         ) AND r.event_id = ?
-    ORDER BY best_finish_time asc";
+    ORDER BY finish_distance_km DESC";
 
       $result = self::hydrate(DB::select($sql, [$eventId]));
 
@@ -67,10 +68,20 @@ class Result extends Model
     }
 
 
-
-
-
     public function resultsIndividual($registrationId)
+    {
+        return self::selectRaw('id,finish_distance_km,pace_km,finish_distance_mile,pace_mile,results.finish_time_date AS date')
+            ->where('registration_id', $registrationId)
+            ->orderBy('finish_distance_km','DESC')
+            ->skip(1)
+            ->take(PHP_INT_MAX)
+            ->get();
+    }
+
+
+
+
+    public function resultsIndividualTime($registrationId)
     {
         return self::selectRaw('id,SUBSTRING(finish_time,2) AS finish_time,pace,DATE_FORMAT(results.finish_time_date,"%e.%c.") AS date')
             ->where('registration_id', $registrationId)
@@ -93,7 +104,7 @@ class Result extends Model
         $events = DB::table('events')->select('id','name')->get()->toArray();
 
         foreach($events as $event){
-            $event->results = self::select('results.id', 'results.finish_time', 'results.finish_time_date', 'results.pace','registrations.event_id')
+            $event->results = self::select('results.id', 'results.finish_distance_km','results.finish_distance_mile', 'results.finish_time_date', 'results.pace_km','results.pace_mile','registrations.event_id')
                 ->where('registrations.user_id', $userId)
                 ->where('registrations.event_id', $event->id)
                 ->join('registrations', 'results.registration_id', '=', 'registrations.id')

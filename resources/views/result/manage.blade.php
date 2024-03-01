@@ -14,29 +14,31 @@
 
                     <div class="overflow-auto">
                         <table id="result_table" class="hidden md:table table-auto border-collapse w-full mt-5">
-
+                            <tr class="text-center">
+                                <td></td>
+                                <td class="bg-gray-600 text-white border border-gray-900 font-black" colspan="2">Mile</td>
+                                <td class="bg-gray-600 text-white border border-gray-900 font-black" colspan="2">Km</td>
+                            </tr>
 
                         @foreach ($results as $result)
                             @if (count($result->results) > 0)
-                                <tr><td class="text-center text-red-600 underline py-3 text-5xl">{{ $result->name }}</td><td colspan="3"></td></tr>
                                 <tr class="text-center">
-                                    <th class="border-none">Datum</th>
-                                    <th class="border-none px-2">Čas</th>
-                                    <th class="border-none px-2">Tempo</th>
-                                    <th class="border-none px-2"></th>
-
+                                    <th class="border-none">Date</th>
+                                    <th class="border-none px-2">Pace</th>
+                                    <th class="border-none px-2">Distance</th>
+                                    <th class="border-none px-2">Pace</th>
+                                    <th class="border-none px-2">Distance</th>
                                 </tr>
 
                                 @foreach ($result->results as $result)
                                     <tr class="text-center odd:bg-gray-100 even:bg-white">
-                                        <td class="border">{{ $carbon::parse($result['finish_time_date'])->format('j.n.') }}</td>
-                                        <td class="border">{{ $result['finish_time'] }}</td>
-                                        <td class="border">{{ $result['pace'] }}</td>
+                                        <td class="border">{{ $result['finish_time_date'] }}</td>
+                                        <td class="border">{{ $result['pace_mile'] }}</td>
+                                        <td class="border">{{ $result['finish_distance_mile'] }}</td>
+                                        <td class="border">{{ $result['pace_km'] }}</td>
+                                        <td class="border">{{ $result['finish_distance_km'] }}</td>
                                         <td class="border py-1">
-                                            <form>
-                                                <input type="hidden" name="result_id" value="{{ $result['id'] }}">
-                                                <input type="submit" class="px-3 bg-red-500 border-2 border-red-600  text-white rounded cursor-pointer" value="Smazat">
-                                            </form>
+                                            <a class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="{{ route('result.delete',['resultId' => $result['id']]) }}">Smazat</a>
                                         </td>
                                     </tr>
 

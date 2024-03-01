@@ -1,7 +1,7 @@
 
-<nav x-data="{ open: false }" class="border-y-2 border-orange-400 bg-[#fefdf9] py-4">
+<nav x-data="{ open: false }" class="border-b-2 border-gray-800 bg-[#fefdf9] py-4">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto  sm:px-6 lg:px-8">
+    <div class="mx-auto sm:px-6 lg:px-8">
 
         <div class="flex justify-between h-16">
 
@@ -138,13 +138,16 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-6 lg:space-x-8 sm:-my-px sm:ms-10 md:flex bg-red-70">
                     <x-nav-link :href="route('index')" :active="request()->routeIs('index')" class="text-lg lg:text-xl text-gray-600">
-                        {{ __('Hlavní strana') }}
+                        {{ __('messages.home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('event.index')" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-600">
-                        {{ __('Závody') }}
+                    <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-600">
+                        {{ __('messages.results') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-600">
+                        {{ __('messages.results_upload') }}
                     </x-nav-link>
                     <x-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('how_it_works.index')" class="text-lg lg:text-xl text-gray-600">
-                        {{ __('Jak na to') }}
+                        {{ __('messages.how_it_works') }}
                     </x-nav-link>
                 </div>
 
@@ -154,7 +157,7 @@
                     <x-slot name="trigger">
                         @auth
 
-                        <button class="inline-flex items-center px-3 pt-[0.4rem] border border-transparent text-base lg:text-lg leading-4 font-medium rounded-md text-blue-600  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-3 pt-[0.2rem] border border-transparent text-base lg:text-lg leading-4 font-medium rounded-md text-blue-600  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
                         </button>
                       @else

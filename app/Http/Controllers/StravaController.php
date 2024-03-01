@@ -42,7 +42,7 @@ class StravaController extends Controller
         Log::info('Webhook event received!', ['query' => $request->query(),'body' => $request->all()]);
         //z pozadavku si vezmeme id uzivatele Stravy a podle nej najdeme uzivatele v nasi databazi
         $stravaId = $request->input('owner_id');
-        //ziskani Usera 
+        //ziskani Usera
         $user = User::select('id', 'strava_access_token', 'strava_refresh_token', 'strava_expires_at')->where('strava_id', $stravaId)->first();
         //ted musime zjistit, jestli token pro REST API jeste plati
         if ($user->strava_expires_at > time())
@@ -74,17 +74,17 @@ class StravaController extends Controller
             ]);
 
             $body = $response->body();
-            
+
             $content = json_decode($body, true);
 
             $user1 = User::where('id', $user->id)->first();
-            
+
             $user1->strava_access_token = $content['access_token'];
-            
+
             $user1->strava_refresh_token = $content['refresh_token'];
-            
+
             $user1->strava_expires_at = $content['expires_at'];
-            
+
             $user1->save();
 
             $url = config('strava.stream.url').$request->input('object_id').config('strava.stream.params');
@@ -108,7 +108,7 @@ class StravaController extends Controller
 
         return response('OK', 200);
     }
-    
+
 
 
 
@@ -172,7 +172,7 @@ class StravaController extends Controller
                 exit();
             }
         }
-        
+
         Log::info('Uzivatel '.$userId.' nahral aktivitu.');
     }
 
@@ -215,13 +215,13 @@ class StravaController extends Controller
     public function autouploadStrava(ResultService $resultService, Registration $registration, TrackPoint $trackPoint, Event $event)
     {
 
-        $url = 'https://www.strava.com/api/v3/activities/10531467027/streams?keys=time,latlng,altitude&key_by_type=true';
-        $token = 'd0bc94aeba4a6d704c3620ce286b1a3530b78f9b';
+        $url = 'https://www.strava.com/api/v3/activities/10801515095/streams?keys=time,latlng,altitude,cadence&key_by_type=true';
+        $token = '603deec20ee136692cf21e980cbebbd248ff32cb';
         $response = Http::withToken($token)->get($url)->json();
         //dd($response);
         if ($response) {
-            $url = 'https://www.strava.com/api/v3/activities/10531467027?include_all_efforts=false';
-            $token = 'd0bc94aeba4a6d704c3620ce286b1a3530b78f9b';
+            $url = 'https://www.strava.com/api/v3/activities/10801515095?include_all_efforts=false';
+            $token = '603deec20ee136692cf21e980cbebbd248ff32cb';
             $response += Http::withToken($token)->get($url)->json();
             // dd($response);
 
@@ -233,13 +233,18 @@ class StravaController extends Controller
 
             $result->registration_id = $finishTime['registration_id'];
 
+
             $result->finish_time_date = $finishTime['finish_time_date'];
 
-            $result->finish_time = $finishTime['finish_time'];
+         //   $result->finish_time = $finishTime['finish_time'];
 
-            $result->pace = $finishTime['pace'];
+            $result->finish_distance_km = $finishTime['finish_distance_km'];
 
-            $result->finish_time_sec = $finishTime['finish_time_sec'];
+            $result->finish_distance_mile = $finishTime['finish_distance_mile'];
+
+            $result->pace_km = $finishTime['pace_km'];
+
+            $result->pace_mile = $finishTime['pace_mile'];
 
             DB::beginTransaction();
 
