@@ -1,10 +1,10 @@
 <x-app-layout>
     <x-alert />
 
-    <div class="py-12">
+    <div class="py-6 px-5 md:py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 bg-rd-500">
+                <div class="lg:p-6 text-gray-900 bg-rd-500">
 
 
                     @if (session('error'))
@@ -18,14 +18,14 @@
                     @endif
 
 
-                    <div class="mt-10">
-                        <div>Insert the link from Strava following the instructions below:</div>
+                    <div class="lg:mt-10">
+                        <div class="text-sm sm:text-md text-green-700 font-black">Insert the link from Strava following the instructions below:</div>
                             <form class="border  border-blue-400 rounded-md p-4 bg-slate-50" action="{{ route('event.upload.store.url',$event->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="flex space-x-1">
-                                    <input type="text" name="strava_url" class="w-full border border-gray-400 rounded-md py-[9px]">
+                                    <input type="text" name="strava_url" class="w-3/4 sm:w-full border border-gray-400 rounded-md py-[9px]">
 
-                                    <button type="submit" class="flex items-center justify-center bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-1 rounded-md w-1/5">
+                                    <button type="submit" class="flex items-center justify-center bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-1 rounded-md w-1/4 sm:w-1/5 text-sm sm:text-lg">
                                         Upload link
                                     </button>
                                 </div>
