@@ -15,10 +15,15 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            screens: {
+                'xs': '475px',
+                ...defaultTheme.screens,
+              },
+
         },
     },
 
     plugins: [forms],
 
-    
+
 };
