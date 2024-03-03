@@ -3,7 +3,7 @@
 @section('title', '| Hlavní strana')
 
 <x-app-layout>
-    <div class="">
-    <div class="text-9xl text-[25rem] text-center pt-20">2:00:35</div>
-    </div>
+    
+    <div class="text-8xl sm:text-9xl lg:text-[25rem] text-center pt-20 text-gray-600">2:00:35</div>
+    
 </x-app-layout>

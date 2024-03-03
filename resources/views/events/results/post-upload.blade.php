@@ -11,6 +11,9 @@
                     @endif
 
                   <div class="bg-blue-50 border border-blue-400 text-blue-700 px-4 py-3 rounded relative mt-2">
+                      
+                      
+                      
                         @if($rank == 1)
                               Je to tvůj nejlepší čas v tomto závodě a jako takový se bude započítávat do celkových výsledků, na které se můžeš podívat <a href="{{ route('event.result.index',$event->id) }}">zde</a>.
 

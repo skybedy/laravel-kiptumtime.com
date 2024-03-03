@@ -158,12 +158,15 @@ class EventController extends Controller
         }
 
 
+        return redirect()->route('result.manage');
+
+        /*
         return view('events.results.post-upload', [
             'results' => $resultSave['results'],
             'event' => $resultSave['event'],
             'last_id' => $resultSave['last_id'],
             'rank' => $resultSave['rank'],
-        ]);
+        ]);*/
 
 
     }
@@ -285,15 +288,15 @@ class EventController extends Controller
         }
 
 
+        return redirect()->route('result.manage');
 
-
-
+/*
         return view('events.results.post-upload', [
             'results' => $resultSave['results'],
             'event' => $resultSave['event'],
             'last_id' => $resultSave['last_id'],
             'rank' => $resultSave['rank'],
-        ]);
+        ]);*/
 
     }
 

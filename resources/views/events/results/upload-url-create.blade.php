@@ -19,7 +19,7 @@
 
 
                     <div class="mt-10">
-                        <div>Vložte odkaz ze Stravy podle pokynů níže:</div>
+                        <div>Insert the link from Strava following the instructions below:</div>
                             <form class="border  border-blue-400 rounded-md p-4 bg-slate-50" action="{{ route('event.upload.store.url',$event->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="flex space-x-1">
@@ -32,17 +32,17 @@
                             </form>
 
                                 <div class="mt-10">
-                                    <h3 class="text-gray-800 underline text-xl sm:text-2xl">Příklady možných odkazů</h3>
+                                    <h3 class="text-gray-800 underline text-xl sm:text-2xl">Examples of possible links</h3>
 
                                     <div class="text-lg sm:text-xl text-orange-700 font-black mt-5 sm:mt-10">1) https://www.strava.com/activities/12345678</div>
-                                    <p class="mt-2"> Toto je odkaz, který zkopírujete z adresního řádku prohlížeče (Chrome,Firefox,Edge, atd.), bez ohledu na to, jestli jste v počítači/notebooku, nebo na mobilu/tabletu a na stránce, na které je běh, který chcete nahrát do výsledků VirtualRunu <br>
-                                    Číslo za posledním lomítkem "123456789" bude v reálu samozřejmě nahrazeno číslem vaší aktivity. </p>
+                                    <p class="mt-2">This is the link that you copy from the browser address bar (Chrome,Firefox,Edge, etc.), regardless of whether you are on a desktop/laptop or mobile/tablet and the page that has the run you want to upload to the VirtualRun results <br>
+The number after the last slash "123456789" will of course be replaced by your activity number in real life. </p>
                                     <div class="mt-2"><img class="img-fluid border" src="/strava-url-browser-example.png" /></div>
                                     <hr class="mt-10">
                                     <div class="text-orange-700 text-lg sm:text-xl font-black mt-10">2) https://strava.app.link/abc123</div>
-                                    <p class="mt-2">Narozdíl od prvního způsobu, kde se kopíruje odkaz z adesního řádku prohlížeče, tady se kopíruje z mobilní aplikace prostřednictvím sdílení do schránky, počemž pak vznikne odkaz ve tvaru uvedeném výše.<br>
-                                     Vzhledem ke skutečnosti, že vývoj aplikací nejen od Stravy je rychlý, může se způsob sdílení do schránky lišit v závislosti na verzi aplikace, operačního systému, atd.<br> Zde je ve 2 krocích uveden příklad pro Android, pro iOS se to může v nějakých detailech lišit.<br>
-                                    Samozřejmě i zde budou znaky za posledním lomítkem "abc123" v reálu nahrazeny znaky vaší aktivity.</p>
+                                    <p class="mt-2">Unlike the first way, where the link is copied from the browser's address bar, here it is copied from the mobile application via sharing to the clipboard, which then creates a link in the form shown above.<br>
+Due to the fact that the development of applications not only from Strava is fast, the method of sharing to clipboard may vary depending on the version of the application, operating system, etc.<br> Here is a 2-step example for Android, for iOS it may differ in some details.<br>
+Of course, also here the characters after the last slash "abc123" will be replaced by your activity characters in real life.</p>
                                     </p>
                                     <div class="mt-2"><img class="img-fluid border" src="/strava-url-app-example.png" /></div>
                                 </div>

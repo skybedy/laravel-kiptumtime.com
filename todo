@@ -2,3 +2,8 @@ potreba pridat vyjimku, kdyz nepujde nacist gpx, treba ted se stalo, ze byla na 
 pres trim(), ale muzou byt i jine duvody
 - ve strava controller a v result service se opakuje kod na overeni platnosti tokenu
 - osetrit, kdyz se nekdo pres odkaz pokusi nahrat aktivitu nekoho jineho
+
+
+chyby
+ kdyz hodim spatny link, musi to vyhodit vyjimku, haze to chybu.. omylem jsem tam dal link athletes..
+ kdyz se clovek prihlasuje uctem z kiptutime a na stejne strance je prihlaseny na strave, tak to je spatne

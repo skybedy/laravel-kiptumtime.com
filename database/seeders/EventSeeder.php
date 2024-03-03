@@ -13,28 +13,13 @@ class EventSeeder extends Seeder
     public function run(): void
     {
         DB::table('events')->insert([
-            'name' => '5km',
+            'name' => 'kiptumtime',
             'second_name' => null,
-            'distance' => '5000',
-            'date_start' => '2023-01-01',
-            'date_end' => '2024-02-29',
+            'time' => '7235',
+            'date_start' => '2024-02-12',
+            'date_end' => '2024-12-10',
         ]);
 
-        DB::table('events')->insert([
-            'name' => '10km',
-            'second_name' => null,
-            'distance' => '10000',
-            'date_start' => '2023-01-01',
-            'date_end' => '2024-02-29',
-        ]);
-
-        DB::table('events')->insert([
-            'name' => '21km',
-            'second_name' => 'půlmaraton',
-            'distance' => '21097',
-            'date_start' => '2023-01-01',
-            'date_end' => '2024-02-29',
-        ]);
 
     }
 }

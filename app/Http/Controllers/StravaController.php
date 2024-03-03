@@ -215,17 +215,17 @@ class StravaController extends Controller
     public function autouploadStrava(ResultService $resultService, Registration $registration, TrackPoint $trackPoint, Event $event)
     {
 
-        $url = 'https://www.strava.com/api/v3/activities/10801515095/streams?keys=time,latlng,altitude,cadence&key_by_type=true';
-        $token = '603deec20ee136692cf21e980cbebbd248ff32cb';
+        $url = 'https://www.strava.com/api/v3/activities/10873132617/streams?keys=time,latlng,altitude,cadence&key_by_type=true';
+        $token = 'fdb1ce62107d7e7e7f243eff8786e580b57b1422';
         $response = Http::withToken($token)->get($url)->json();
         //dd($response);
         if ($response) {
-            $url = 'https://www.strava.com/api/v3/activities/10801515095?include_all_efforts=false';
-            $token = '603deec20ee136692cf21e980cbebbd248ff32cb';
+            $url = 'https://www.strava.com/api/v3/activities/10873132617?include_all_efforts=false';
+            $token = 'fdb1ce62107d7e7e7f243eff8786e580b57b1422';
             $response += Http::withToken($token)->get($url)->json();
             // dd($response);
 
-            $user = $this->getUserByStravaId(100148951);
+            $user = $this->getUserByStravaId(132624638);
 
             $finishTime = $resultService->getActivityFinishDataFromStravaWebhook($response, $registration, $user->id);
 
@@ -321,6 +321,6 @@ class StravaController extends Controller
 
     public function authorizeStrava(Request $request)
     {
-        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://virtual-run.cz/redirect-strava/'.$request->user()->id.'&approval_prompt=force&scope=activity:read_all');
+        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava/'.$request->user()->id.'&approval_prompt=force&scope=activity:read_all');
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('firstname');
             $table->string('lastname');
+            $table->string('country');
             $table->string('team')->nullable()->default(null);
             $table->year('birth_year');
             $table->enum('gender', ['M', 'F']);

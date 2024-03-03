@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('second_name')->nullable()->default(null);
             $table->unsignedInteger('distance');
+            $table->unsignedInteger('time');
             $table->date('date_start');
             $table->date('date_end');
             $table->timestamps();

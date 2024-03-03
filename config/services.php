@@ -34,14 +34,14 @@ return [
     'facebook' => [
         'client_id' => '709655243881130',
         'client_secret' => '422e616f1441a4830096892038f60973',
-        'redirect' => 'https://virtual-run.cz/auth/facebook/callback',
+        'redirect' => 'https://kiptumtime.com/auth/facebook/callback',
     ],
 
     'google' => [
         'client_id' => '81604204242-69c7g24se3ogved24mm0btqi62s8sl9a.apps.googleusercontent.com',
         'client_secret' => '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',
-        'redirect' => 'http://localhost:82/auth/google/callback',
-        //'redirect' => 'https://virtual-run.cz/auth/google/callback',
+       // 'redirect' => 'http://localhost:82/auth/google/callback',
+        'redirect' => 'https://kiptumtime.com/auth/google/callback',
     ],
 
 ];
