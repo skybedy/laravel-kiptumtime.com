@@ -66,7 +66,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 
-## sudo chmod 666 /var/run/docker.sock v pripade, kdyz systemn hlasi, ze Docker nepracuje
+## sudo chmod 666 /var/run/docker.sock 
+## v pripade, kdyz systemn hlasi, ze Docker nepracuje
 
 
 ## 253476
