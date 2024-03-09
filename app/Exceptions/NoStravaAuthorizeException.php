@@ -3,12 +3,16 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Support\Facades\Blade;
 
 class NoStravaAuthorizeException extends Exception
 {
     public function __construct()
     {
-        $message = 'First you need to <a class="underline" href="'.route('authorize_strava').'">authorize</a>  the application on Strava.';
+        $route = route('authorize_strava');
+        
+        $message = 'First you need to <a class="underline" href="'.$route.'">ENABLE</a> the application on Strava.';
+
         parent::__construct($message);
     }
 }

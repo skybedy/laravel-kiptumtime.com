@@ -1,26 +1,14 @@
 <x-app-layout>
     <x-alert />
+    <x-info />
 
     <div class="py-6 px-5 md:py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="lg:p-6 text-gray-900 bg-rd-500">
-
-
-                    @if (session('error'))
-                        @if(session('error') == 'registration_required')
-                            @php $error = 'Nahrávat výsledky je možné až poté, co se k závodu zaregistrujete'; @endphp
-                        @else
-                            @php $error = session('error') @endphp
-                        @endif
-
-                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-2">{!!$error!!}</div>
-                    @endif
-
-
                     <div class="lg:mt-10">
-                        <div class="text-[0.7rem] sm:text-md text-green-700 font-black">Insert the link from Strava following the instructions below:</div>
-                            <form class="border  border-blue-400 rounded-md p-2 sm:p-4 bg-slate-50" action="{{ route('event.upload.store.url',$event->id) }}" method="post" enctype="multipart/form-data">
+                        <div class="text-[0.7rem] sm:text-lg md:text-xl xl:text-2xl text-green-700 font-black">Insert the link from Strava following the instructions below:</div>
+                            <form class="border  border-blue-400 rounded-md p-2 sm:p-4 bg-slate-50" action="{{ route('event.upload.store.url',$eventId) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="flex space-x-1">
                                     <input type="text" name="strava_url" class="w-2/3 sm:w-full border border-gray-400 rounded-md py-[9px]">

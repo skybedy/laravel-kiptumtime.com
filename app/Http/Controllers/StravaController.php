@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\DuplicateStravaAuthorizationException;
 use App\Models\Event;
 use App\Models\Registration;
 use App\Models\Result;
@@ -14,12 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
-use App\Exceptions\DuplicateFileException;
-use App\Exceptions\SmallDistanceException;
-use App\Exceptions\TimeIsOutOfRangeException;
-use App\Exceptions\TimeMissingException;
-use App\Exceptions\DuplicityTimeException;
-use Exception;
+
 
 
 class StravaController extends Controller
@@ -126,18 +122,32 @@ class StravaController extends Controller
         //return $dataStream;
         $finishTime = $resultService->getActivityFinishDataFromStravaWebhook($dataStream, $registration, $userId);
 
+     
         $result = new Result();
+
+       
+
+
+
+
 
         $result->registration_id = $finishTime['registration_id'];
 
         $result->finish_time_date = $finishTime['finish_time_date'];
 
-        $result->finish_time = $finishTime['finish_time'];
+        $result->finish_distance_km = $finishTime['finish_distance_km'];
 
-        $result->pace = $finishTime['pace'];
+        $result->finish_distance_mile = $finishTime['finish_distance_mile'];
 
-        $result->finish_time_sec = $finishTime['finish_time_sec'];
+        $result->pace_km = $finishTime['pace_km'];
 
+        $result->pace_mile = $finishTime['pace_mile'];
+
+
+       
+       
+       
+       
         DB::beginTransaction();
 
         try
@@ -293,7 +303,7 @@ class StravaController extends Controller
 
     public function redirectStrava(Request $request)
     {
-
+//dd($request);
         $response = Http::post('https://www.strava.com/oauth/token', [
             'client_id' => '117954',
             'client_secret' => 'a56df3b8bb06067ebe76c7d23af8ee8211d11381',
@@ -305,6 +315,14 @@ class StravaController extends Controller
         $content = json_decode($body, true);
         //dd($content);
 
+        try{
+            
+        
+        if(User::firstWhere('strava_id', $content['athlete']['id']))
+        {
+            throw new DuplicateStravaAuthorizationException();
+        }
+        
         $user = User::find($request->userId);
         $user->strava_id = $content['athlete']['id'];
         $user->strava_access_token = $content['access_token'];
@@ -312,8 +330,22 @@ class StravaController extends Controller
         $user->strava_expires_at = $content['expires_at'];
         $user->strava_scope = $request->query('scope');
         $user->save();
+    }
+    catch(DuplicateStravaAuthorizationException $e)
+    {
+        
+        $parsedUrl = parse_url($request->referer);
+      //  dd($parsedUrl['path']);
+    
+
+        
+        
+        return redirect('https://kiptumtime.com'.$request->query('path'))->with('error',$e->getMessage()); 
+    }
 
         return redirect('/');
+
+        
 
     }
 
@@ -321,6 +353,14 @@ class StravaController extends Controller
 
     public function authorizeStrava(Request $request)
     {
-        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava/'.$request->user()->id.'&approval_prompt=force&scope=activity:read_all');
+        $referer = request()->header('Referer');
+       // dd($referer);
+        $parsedUrl = parse_url($referer);
+
+$path = $parsedUrl['path'];
+
+
+        
+        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava/'.$request->user()->id.'?path='.$path.'&approval_prompt=force&scope=activity:read_all');
     }
 }

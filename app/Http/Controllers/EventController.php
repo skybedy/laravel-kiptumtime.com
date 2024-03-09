@@ -8,6 +8,7 @@ use App\Exceptions\TimeIsOutOfRangeException;
 use App\Exceptions\TimeMissingException;
 use App\Exceptions\DuplicityTimeException;
 use App\Exceptions\NoStravaAuthorizeException;
+use App\Exceptions\StartDateLocalMissingException;
 use Exception;
 use App\Models\Event;
 use App\Models\Registration;
@@ -41,21 +42,29 @@ class EventController extends Controller
 
     public function show(Request $request, Event $event)
     {
-
         return view('events.show', [
             'event' => $event::find($request->eventId),
         ]);
     }
 
-    public function uploadUrlCreate(Request $request, Event $event)
+    public function uploadUrlCreate(Request $request, User $user)
     {
+      
+        if(is_null($ev = $user::where('id',$request->user()->id)->value('strava_id')))
+        {
+            session()->flash('info','no_strava_authorization');
+        }
+        
+        
+        
         return view('events.results.upload-url-create', [
-            'event' => $event::find($request->eventId),
+            'eventId' => $request->eventId,
         ]);
     }
 
     public function uploadFileCreate(Request $request, Event $event)
     {
+        
         return view('events.results.upload-file-create', [
             'event' => $event::find($request->eventId),
         ]);
@@ -71,7 +80,7 @@ class EventController extends Controller
                 'strava_url' => 'required',
             ],
             [
-                'strava_url.required' => 'Je nutné vyplnit odkaz na Stravy.',
+                'strava_url.required' => 'You must fill in the link to Strava.',
             ]
         );
 
@@ -125,6 +134,10 @@ class EventController extends Controller
             return back()->withError($e->getMessage())->withInput();
         }
         catch (TimeMissingException $e)
+        {
+            return back()->withError($e->getMessage())->withInput();
+        }
+        catch (StartDateLocalMissingException $e)
         {
             return back()->withError($e->getMessage())->withInput();
         }

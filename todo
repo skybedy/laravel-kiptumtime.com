@@ -7,3 +7,9 @@ pres trim(), ale muzou byt i jine duvody
 chyby
  kdyz hodim spatny link, musi to vyhodit vyjimku, haze to chybu.. omylem jsem tam dal link athletes..
  kdyz se clovek prihlasuje uctem z kiptutime a na stejne strance je prihlaseny na strave, tak to je spatne
+
+ stale se ukazuje chybova stranka i kdyz je nastaveno production
+
+ dopsat vyjimku, kdyz neni $activityData['start_date_local']s
+
+ chyba, kdyz jsem omylem do uploadu dal text

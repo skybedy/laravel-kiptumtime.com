@@ -78,8 +78,8 @@ input[type=file]::file-selector-button:hover {
 
                 {{ $slot }}
             </main>
-            <footer class="py-5 border-t-2 border-gray-800 text-center flex items-center justify-center bg-[#fefdf9] ">
-                <p class="text-md xs:text-2xl sm:text-3xl text-gray-800 font-black">Dedicated to the memory of Kelvin Kiptum</p>
+            <footer class="py-5 border-t-2 border-gray-700 text-center flex items-center justify-center bg-[#fefdf9] ">
+                <p class="text-md xs:text-2xl sm:text-3xl text-gray-600 font-black">Dedicated to the memory of Kelvin Kiptum</p>
             </footer>
         </div>
 

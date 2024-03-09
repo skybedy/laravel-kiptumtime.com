@@ -13,6 +13,7 @@ use Illuminate\Database\UniqueConstraintViolationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class WebhookController extends Controller
 {
@@ -84,7 +85,7 @@ class WebhookController extends Controller
     public function getStrava(Request $request)
     {
 
-        \Log::info($request->query());
+        Log::info($request->query());
         $VERIFY_TOKEN = 'STRAVA';
 
         $mode = $request->query('hub_mode');
@@ -93,12 +94,12 @@ class WebhookController extends Controller
 
         //        if ($mode && $token) {
         if ($mode === 'subscribe' && $token === $VERIFY_TOKEN) {
-            \Log::info('WEBHOOK_VERIFIED');
+            Log::info('WEBHOOK_VERIFIED');
 
             return response()->json(['hub.challenge' => $challenge]);
         } else {
 
-            \Log::info('neco-spatne');
+            Log::info('neco-spatne');
 
             return response('Forbidden', 403);
         }
@@ -111,7 +112,7 @@ class WebhookController extends Controller
     public function postStrava(Request $request)
     {
 
-        \Log::info('Webhook event received!', [
+        Log::info('Webhook event received!', [
             'query' => $request->query(),
             'body' => $request->all(),
         ]);
