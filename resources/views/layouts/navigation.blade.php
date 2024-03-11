@@ -4,11 +4,6 @@
     <div class="mx-auto sm:px-6 lg:px-8">
 
         <div class="flex justify-between h-16">
-      @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center flex-1">

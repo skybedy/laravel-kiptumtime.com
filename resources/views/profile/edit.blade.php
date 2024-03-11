@@ -1,10 +1,10 @@
 <x-app-layout>
 
-   @if (session('error'))
+    <x-alert />
 
-                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-2">{{ session('error') }}</div>
-                    @endif
+    <x-status />
 
+    
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
@@ -20,7 +20,11 @@
                 </div>
             </div>
 
-
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <div class="max-w-xl">
+                    @include('profile.partials.update-password-form')
+                </div>
+            </div>
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">

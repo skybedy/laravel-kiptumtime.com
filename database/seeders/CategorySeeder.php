@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert(
             [
                 [
-                    'name' => 'Ženy U23',
+                    'name' => 'Women U23',
                     'order' => '1',
                     'gender' => 'F',
                     'age_start' => '18',
@@ -24,7 +24,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy OPEN',
+                    'name' => 'Women OPEN',
                     'order' => '2',
                     'gender' => 'F',
                     'age_start' => '23',
@@ -32,7 +32,7 @@ class CategorySeeder extends Seeder
                     'open' => '1',
                 ],
                 [
-                    'name' => 'Ženy 30-34',
+                    'name' => 'Women 30-34',
                     'order' => '3',
                     'gender' => 'F',
                     'age_start' => '30',
@@ -40,7 +40,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 35-39',
+                    'name' => 'Women 35-39',
                     'order' => '4',
                     'gender' => 'F',
                     'age_start' => '35',
@@ -48,7 +48,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 40-44',
+                    'name' => 'Women 40-44',
                     'order' => '5',
                     'gender' => 'F',
                     'age_start' => '40',
@@ -56,7 +56,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 45-49',
+                    'name' => 'Women 45-49',
                     'order' => '6',
                     'gender' => 'F',
                     'age_start' => '45',
@@ -64,7 +64,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 50-54',
+                    'name' => 'Women 50-54',
                     'order' => '7',
                     'gender' => 'F',
                     'age_start' => '50',
@@ -72,7 +72,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 55-59',
+                    'name' => 'Women 55-59',
                     'order' => '8',
                     'gender' => 'F',
                     'age_start' => '55',
@@ -80,7 +80,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 50-54',
+                    'name' => 'Women 50-54',
                     'order' => '9',
                     'gender' => 'F',
                     'age_start' => '50',
@@ -88,7 +88,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 55-59',
+                    'name' => 'Women 55-59',
                     'order' => '10',
                     'gender' => 'F',
                     'age_start' => '55',
@@ -96,7 +96,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 60-64',
+                    'name' => 'Women 60-64',
                     'order' => '11',
                     'gender' => 'F',
                     'age_start' => '60',
@@ -104,7 +104,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 65-69',
+                    'name' => 'Women 65-69',
                     'order' => '12',
                     'gender' => 'F',
                     'age_start' => '65',
@@ -112,7 +112,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Ženy 70+',
+                    'name' => 'Women 70+',
                     'order' => '13',
                     'gender' => 'F',
                     'age_start' => '70',
@@ -120,7 +120,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'U23-M',
+                    'name' => 'Men U23',
                     'order' => '21',
                     'gender' => 'M',
                     'age_start' => '18',
@@ -128,7 +128,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži OPEN',
+                    'name' => 'Men OPEN',
                     'order' => '22',
                     'gender' => 'M',
                     'age_start' => '23',
@@ -136,7 +136,7 @@ class CategorySeeder extends Seeder
                     'open' => '1',
                 ],
                 [
-                    'name' => 'Muži 30-34',
+                    'name' => 'Men 30-34',
                     'order' => '23',
                     'gender' => 'M',
                     'age_start' => '30',
@@ -144,7 +144,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 35-39',
+                    'name' => 'Men 35-39',
                     'order' => '24',
                     'gender' => 'M',
                     'age_start' => '35',
@@ -152,7 +152,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 40-44',
+                    'name' => 'Men 40-44',
                     'order' => '25',
                     'gender' => 'M',
                     'age_start' => '40',
@@ -160,7 +160,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 45-49',
+                    'name' => 'Men 45-49',
                     'order' => '26',
                     'gender' => 'M',
                     'age_start' => '45',
@@ -168,7 +168,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 50-54',
+                    'name' => 'Men 50-54',
                     'order' => '27',
                     'gender' => 'M',
                     'age_start' => '50',
@@ -176,7 +176,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 55-59',
+                    'name' => 'Men 55-59',
                     'order' => '28',
                     'gender' => 'M',
                     'age_start' => '55',
@@ -184,7 +184,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 50-54',
+                    'name' => 'Men 50-54',
                     'order' => '29',
                     'gender' => 'M',
                     'age_start' => '50',
@@ -192,7 +192,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 55-59',
+                    'name' => 'Men 55-59',
                     'order' => '30',
                     'gender' => 'M',
                     'age_start' => '55',
@@ -200,7 +200,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 60-64',
+                    'name' => 'Men 60-64',
                     'order' => '31',
                     'gender' => 'M',
                     'age_start' => '60',
@@ -208,7 +208,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži M65-69',
+                    'name' => 'Men M65-69',
                     'order' => '32',
                     'gender' => 'M',
                     'age_start' => '65',
@@ -216,7 +216,7 @@ class CategorySeeder extends Seeder
                     'open' => null,
                 ],
                 [
-                    'name' => 'Muži 70+',
+                    'name' => 'Men 70+',
                     'order' => '33',
                     'gender' => 'M',
                     'age_start' => '70',

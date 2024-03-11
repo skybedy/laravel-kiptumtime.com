@@ -21,8 +21,6 @@ return new class extends Migration
             $table->bigInteger('time')->unsigned()->nullable(); // Časová značka
             $table->integer('cadence')->unsigned()->nullable(); // Časová značka
             $table->float('altitude')->nullable(); // Nadmořská výška
-            //$table->float('speed')->nullable(); // Rychlost
-            //$table->integer('heart_rate')->nullable(); // Srdeční tep
             $table->unique(['user_id', 'time']);
             $table->timestamps(); // Vytvoří created_at a updated_at sloupce
         });

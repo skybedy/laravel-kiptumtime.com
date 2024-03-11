@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Models\TrackPoint;
+use App\Models\Registration;
 
 class Result extends Model
 {
@@ -100,7 +102,6 @@ class Result extends Model
 
     public function getAllUserResults($userId)
     {
-
         $events = DB::table('events')->select('id','name')->get()->toArray();
 
         foreach($events as $event){
@@ -114,16 +115,30 @@ class Result extends Model
                 ->get()->toArray();
         }
 
-
-return $events;
-
-
-
-
-
+        return $events;
     }
 
+    public function deleteResultsAfterDeleteUser($userId)
+    {
+        $trackpoint = new TrackPoint;
+       
+        $trackpoint->deleteTrackPointsByUser($userId);
+        
+        self::where('registrations.user_id', $userId)
+            ->join('registrations', 'results.registration_id', '=', 'registrations.id')
+            ->delete();
 
+        $registration = new Registration;
+
+        $registration->deleteRegistrationsByUser($userId);
+    }
+    
 
 
 }
+    
+
+
+
+
+

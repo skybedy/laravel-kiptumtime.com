@@ -18,4 +18,9 @@ class Registration extends Model
     {
         return self::where(['event_id' => $eventId, 'user_id' => $userId])->first('id');
     }
+
+    public function deleteRegistrationsByUser($userId)
+    {
+        self::where('user_id', $userId)->delete();
+    }
 }

@@ -10,4 +10,11 @@ class TrackPoint extends Model
     {
         return $this->belongsTo(Result::class);
     }
+
+    public function deleteTrackPointsByUser($userId)
+    {
+        self::where('user_id', $userId)->delete();
+    }
+
+
 }

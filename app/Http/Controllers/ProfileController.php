@@ -8,18 +8,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
+use App\Models\TrackPoint;
+use App\Models\Result;
+
 
 class ProfileController extends Controller
 {
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): View
+    public function edit(Request $request,User $user): View
     {
-        // dd($request->user());
+        $passwordChanged = 1;
+       
+        if(is_null($user::where('id',$request->user()->id)->value('password_changed')))
+        {
+            $passwordChanged = null;
+        }
 
         return view('profile.edit', [
+
             'user' => $request->user(),
+
+            'passwordChanged' => $passwordChanged,
+
         ]);
     }
 
@@ -38,21 +51,28 @@ class ProfileController extends Controller
     /**
      * Delete the user's account.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(Request $request,Result $result): RedirectResponse
     {
+        
         $request->validateWithBag('userDeletion', [
+            
             'password' => ['required', 'current_password'],
+        
         ]);
 
         $user = $request->user();
+
+        $result->deleteResultsAfterDeleteUser($user->id);
 
         Auth::logout();
 
         $user->delete();
 
         $request->session()->invalidate();
+        
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
     }
+
 }

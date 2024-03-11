@@ -55,14 +55,14 @@ $(() => {
            if($(window).width() < 640)
            {
             //var novyRadek = $('<tr class="tr_map_xhr"><td class="text-center" colspan="5"><div id="m" style="height:300px"></div></td></tr>'); // Vytvoření nového řádku
-            var novyRadek = $('<tr class="tr_map_xhr '+ trId +'" style="position:relative"><td class="text-center" colspan="6"><div id="close_map" style="padding:2px 10px;border:2px solid black;background:white;position:absolute;left:5px;top:5px;z-index:1000;cursor:pointer">Zavřít mapu</div><div id="m" style="height:200px"></div></td></tr>'); // Vytvoření nového řádku
+            var novyRadek = $('<tr class="tr_map_xhr '+ trId +'" style="position:relative"><td class="text-center" colspan="6"><div id="close_map" style="padding:2px 10px;border:2px solid black;background:white;position:absolute;left:5px;top:5px;z-index:1000;cursor:pointer">Close map</div><div id="m" style="height:200px"></div></td></tr>'); // Vytvoření nového řádku
 
             $("#result_table_sm #"+trId).after(novyRadek);
 
            }
            else
            {
-            var novyRadek = $('<tr class="tr_map_xhr '+ trId +'" style="position:relative"><td class="text-center" colspan="10"><div id="close_map" style="padding:2px 10px;border:2px solid black;background:white;position:absolute;right:100px;top:17px;z-index:1000;cursor:pointer">Zavřít mapu</div><div id="m" style="height:400px"></div></td></tr>'); // Vytvoření nového řádku
+            var novyRadek = $('<tr class="tr_map_xhr '+ trId +'" style="position:relative"><td class="text-center" colspan="10"><div id="close_map" style="padding:2px 10px;border:2px solid black;background:white;position:absolute;right:100px;top:17px;z-index:1000;cursor:pointer">Close map</div><div id="m" style="height:400px"></div></td></tr>'); // Vytvoření nového řádku
             $("#result_table #"+trId).after(novyRadek);
 
            }

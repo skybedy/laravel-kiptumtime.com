@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->foreignId('registration_id')->constrained();
             $table->date('finish_time_date');
-            // $table->string('place');
             $table->unsignedMediumInteger('finish_time_order')->nullable();
             $table->time('finish_time');
-            $table->string('pace');
             $table->unsignedInteger('finish_time_sec');
-            //  $table->json('duplicity_check')->nullable();
+            $table->double('finish_distance_km', 10, 2)->nullable();
+            $table->double('finish_distance_mile', 10, 2)->nullable();
+            $table->string('pace_km');
+            $table->string('pace_mile');
             $table->timestamps();
         });
     }

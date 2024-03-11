@@ -50,7 +50,7 @@ class EventController extends Controller
     public function uploadUrlCreate(Request $request, User $user)
     {
       
-        if(is_null($ev = $user::where('id',$request->user()->id)->value('strava_id')))
+        if(is_null($user::where('id',$request->user()->id)->value('strava_id')))
         {
             session()->flash('info','no_strava_authorization');
         }

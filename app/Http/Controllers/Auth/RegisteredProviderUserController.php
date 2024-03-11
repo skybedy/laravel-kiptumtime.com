@@ -75,7 +75,7 @@ class RegisteredProviderUserController extends Controller
             'gender' => $request->gender,
             'birth_year' => $request->birth_year,
             'email' => $request->email,
-            'password' => Hash::make('password'),
+            'password' => Hash::make($request->email),
             $providerNameId => $request->provider_id,
         ]);
 
