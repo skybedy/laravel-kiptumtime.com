@@ -3,7 +3,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-10">
                   <div class="md:p-6 text-gray-900 bg-rd-500">
-                        <div class="md:my-3">
                               <h2 class="text-3xl text-orange-500 underline">Introduction</h2>
                               <p class="text-xl mt-4">
 
@@ -22,8 +21,26 @@ by copying the link to the relevant activity.<br><br>
 The app accepts all runs that last 2:00:35 or longer. When a run is longer than 2:00:35, the application removes everything over that time
 and subtracts the average time that was reached by 2:00:35 from the total run time.
                               </p>
-                        </div>
+                        
+ <h2 class="text-2xl text-orange-500 underline mt-10">Forum</h2>
+ <p class="text-xl mt-3" >The forum is a place where you can ask questions, share your experiences, and discuss the app. The forum is available to everyone, but only registered users can post. The forum is moderated and the administrator reserves the right to delete posts that are not in line with the rules of the forum. The forum is available at <a target="_blank" href="https://forum.kiptumtime.com" class="text-blue-500 underline">forum.kiptumtime.com</a></p>
+                         
+                         
+                    <h2 class="text-2xl text-orange-500 underline mt-10">Test mode</h2>
+                          <p class="text-xl mt-3" >
+                             At the moment the application is running in test mode and the documentation and procedures will be continuously updated.<br>
+                             It is very likely that there are still some bugs in the application that will be addressed operationally.
 
+                          </p>
+                    <h2 class="text-2xl text-orange-500 underline mt-10">English</h2>
+                    <p>It is likely that the English used here is not very good, this application was created in a hurry and the author does not speak English very well.
+                        Most of the text used here comes from the DeepL translator, but this will change over time.
+                    </p>
+                         
+                         
+                         
+                         
+                         
                          <div class="mt-10">
                               <h2 class="text-2xl text-orange-500 underline">Age groups</h2>
                               <p class="text-xl mt-3" > Classification into the age group is done according to the year of birth, if someone does not want to indicate their year of birth they will automatically be classified into the OPEN group.</p>
@@ -46,19 +63,18 @@ and subtracts the average time that was reached by 2:00:35 from the total run ti
                               </p>
                         </div>
 
-                        <div class="mt-10">
-                          <h2 class="text-2xl text-orange-500 underline">Test mode</h2>
-                          <p class="text-xl mt-3" >
-                             At the moment the application is running in test mode and the documentation and procedures will be continuously updated.<br>
-                             It is very likely that there are still some bugs in the application that will be addressed operationally.
+                        <h2 class="text-2xl text-orange-500 underline mt-10">Something a little about GPS virtual racing</h2>
+                        <h2 class="text-2xl text-orange-500 underline mt-10">Trickies of the Strava</h2>
 
-                          </p>
 
+                   
+                  
 
 
 
 
-                  </div>
+
+                  
             </div>
         </div>
     </div>

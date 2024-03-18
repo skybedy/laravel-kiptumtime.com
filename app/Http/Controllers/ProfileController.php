@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use App\Models\User;
-use App\Models\TrackPoint;
+use App\Models\Flauser;
 use App\Models\Result;
 
 
@@ -18,10 +18,10 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request,User $user): View
+    public function edit(Request $request,User $user,Flauser $flauser): View
     {
         $passwordChanged = 1;
-       
+      
         if(is_null($user::where('id',$request->user()->id)->value('password_changed')))
         {
             $passwordChanged = null;
@@ -64,9 +64,13 @@ class ProfileController extends Controller
 
         $result->deleteResultsAfterDeleteUser($user->id);
 
+        Flauser::where('email',$request->user()->email)->delete();
+
         Auth::logout();
 
         $user->delete();
+
+
 
         $request->session()->invalidate();
         

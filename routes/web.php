@@ -9,6 +9,8 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\StravaController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestEmail;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,5 +70,13 @@ Route::controller(RegisteredProviderUserController::class)->group(function () {
     Route::get('register-socialite', 'create')->name('register-socialite');
     Route::post('register-socialite', 'store')->name('register-socialite');
 });
+
+Route::get('/test-email', function () {
+    return new App\Mail\TestEmail();
+})->name('test-email');
+
+Route::get('testmail', function () {
+    Mail::to('skybedy@gmail.com')->send(new TestEmail());
+   }); 
 
 require __DIR__.'/auth.php';

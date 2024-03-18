@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Flauser;
 use App\Providers\RouteServiceProvider;
 use Exception;
-use Illuminate\Auth\Events\Registered;
+use App\Events\UserRegistered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,6 +15,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 use Laravel\Socialite\Facades\Socialite;
 use PeterColes\Countries\CountriesFacade as Countries;
+use Illuminate\Support\Str;
 
 
 class RegisteredProviderUserController extends Controller
@@ -66,7 +68,10 @@ class RegisteredProviderUserController extends Controller
             'email' => 'required|string|email|max:255|unique:'.User::class,
         ]);
 
-        //dd($provider);
+        $defaultPassword = Str::random(8);
+       
+        $password = Hash::make($defaultPassword);
+      
         $user = User::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
@@ -75,16 +80,23 @@ class RegisteredProviderUserController extends Controller
             'gender' => $request->gender,
             'birth_year' => $request->birth_year,
             'email' => $request->email,
-            'password' => Hash::make($request->email),
+            'password' => $password,
             $providerNameId => $request->provider_id,
         ]);
 
-        //$user = User::create($request->all());
+        $joined_at = date('Y-m-d H:i:s');
+       
+        Flauser::create([
+            'username' => $request->firstname.' '.$request->lastname,
+            'email' => $request->email,
+            'password' => $password,
+            'joined_at' => $joined_at,
+            'is_email_confirmed' => 1,
+        ]);
 
-        event(new Registered($user));
+        event(new UserRegistered($user, $defaultPassword));
 
         Auth::login($user);
-
         return redirect(RouteServiceProvider::HOME);
     }
 

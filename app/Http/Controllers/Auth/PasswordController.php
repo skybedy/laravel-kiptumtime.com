@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use App\Models\Flauser;
 
 class PasswordController extends Controller
 {
@@ -20,9 +21,18 @@ class PasswordController extends Controller
             'password' => ['required', Password::defaults(), 'confirmed'],
         ]);
 
+        $password = Hash::make($validated['password']);
+
         $request->user()->update([
-            'password' => Hash::make($validated['password']),
-            'password_changed' => 1        ]);
+            'password' => $password,
+            'password_changed' => 1       
+         ]);
+
+        
+
+        $flauser = Flauser::where('email', $request->user()->email);
+         
+        $flauser->update(['password' => $password]);
 
         return back()->with('status', 'Password updated');
     }

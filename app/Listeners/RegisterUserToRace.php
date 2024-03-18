@@ -3,12 +3,11 @@
 namespace App\Listeners;
 
 use App\Events\UserRegistered;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Auth\Events\Registered;
 use App\Models\Category;
 use App\Models\Registration;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestEmail;
 
 class RegisterUserToRace
 {
@@ -27,7 +26,7 @@ class RegisterUserToRace
     /**
      * Handle the event.
      */
-    public function handle(Registered $event): void
+    public function handle(UserRegistered $event): void
     {
         $category = new Category();
 
@@ -46,6 +45,8 @@ class RegisterUserToRace
             'category_id' => $categoryId,
         ]);
 
-       Log::info('Uzivatel '.$event->user->id.' zaregistrován.');
+        Mail::to($event->user->email)->send(new TestEmail($event->defaultPassword));
+
+        Log::info('Uzivatel '.$event->user->id.' zaregistrován.');
     }
 }

@@ -13,7 +13,7 @@
                     @endif
 
                     <div class="overflow-auto">
-                        <table id="result_table" class="hidden md:table table-auto border-collapse w-full mt-5">
+                        <table id="result_table" class="table table-auto border-collapse w-full mt-5 text-[0.6rem] md:text-base">
                             <tr class="text-center">
                                 <td></td>
                                 <td class="bg-gray-600 text-white border border-gray-900 font-black" colspan="2">Mile</td>
@@ -38,7 +38,7 @@
                                         <td class="border">{{ $result['pace_km'] }}</td>
                                         <td class="border">{{ $result['finish_distance_km'] }}</td>
                                         <td class="border py-1">
-                                            <a class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="{{ route('result.delete',['resultId' => $result['id']]) }}">Delete result</a>
+                                            <a class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded  text-[0.6rem] md:text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="{{ route('result.delete',['resultId' => $result['id']]) }}">Delete result</a>
                                         </td>
                                     </tr>
 
