@@ -40,8 +40,7 @@ return [
     'google' => [
         'client_id' => '81604204242-69c7g24se3ogved24mm0btqi62s8sl9a.apps.googleusercontent.com',
         'client_secret' => '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',
-       // 'redirect' => 'http://localhost:82/auth/google/callback',
-        'redirect' => 'https://kiptumtime.com/auth/google/callback',
+        'redirect' => env('APP_URL').'/auth/google/callback',
     ],
 
 ];

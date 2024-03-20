@@ -1,3 +1,4 @@
+@section('title', 'Register')
 <div class="bg-red-100 text-red-500 py-2 text-center border-b border-t border-red-300 mt-1">{{ __('messages.Pokud jste se ocitli na této stránce, tak tu jste patrně poprvé a v tom případě je jednou jedinkrát potřeba doplnit rok narození a pohlaví pro správné zařazení do věkové kategorie.') }}</div>
 <div class="bg-red-100 text-red-500 py-2 text-center border-b border-t border-red-300 mt-1">{{ __('messages.V případě, že nechcete uvádět rok narození, budete automaticky zařazeni do kategorie OPEN 23-39 let.') }}</div>
 

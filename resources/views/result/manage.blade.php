@@ -1,6 +1,5 @@
 @inject('carbon', 'Carbon\Carbon')
-
-
+@section('title', 'Results management')
 <x-app-layout>
 
     <div class="py-3">

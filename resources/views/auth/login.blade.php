@@ -1,4 +1,8 @@
+
+@section('title', 'login')
+
 <x-guest-layout>
+
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
     <div class="flex justify-center mt-5 sm:mt-0 sm:items-center">
@@ -10,4 +14,4 @@
     </div>
 </x-guest-layout>
 
- 
+

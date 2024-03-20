@@ -1,24 +1,15 @@
 @inject('carbon', 'Carbon\Carbon')
-
-
+@section('title', 'results')
 <x-app-layout>
-
     <div class="py-3">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-5">
                 <div class="px-3 pt-3 text-gray-900">
-
-
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
-
-
-
-
-
 
 @foreach ($events as $event)
     <div class="bg-gray-600  p-5 mb-3 text-3xl rounded-lg border border-gray-700 flex justify-between flex-col sm:flex-row shadow-lg">

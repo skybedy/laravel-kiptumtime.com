@@ -41,7 +41,7 @@ class TestEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.test',
+            view: 'mail.post-login',
             with: [
                 'defaultPassword' => $this->defaultPassword,
             ],

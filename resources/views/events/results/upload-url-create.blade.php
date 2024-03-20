@@ -1,3 +1,4 @@
+@section('title', 'Result upload via url')
 <x-app-layout>
     <x-alert />
     <x-info />

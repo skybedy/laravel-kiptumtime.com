@@ -4,8 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>kiptumtime</title>
+        <title>{{ config('app.name', 'Kiptumtime') }} - @yield('title')</title>
 
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,27 +55,18 @@ input[type=file]::file-selector-button:hover {
 
 
 
-       .architects-daughter-regular {
+.architects-daughter-regular {
   font-family: "Architects Daughter", cursive;
   font-weight: 400;
   font-style: normal;
 }
-
-
-        </style>
-
-
-
-    </head>
+ </style>
+</head>
     <body class="font-sans antialiased">
         <div class="flex flex-col h-screen justify-between">
-
             @include('layouts.navigation')
-
-
             <!-- Page Content -->
             <main class="mb-auto">
-
                 {{ $slot }}
             </main>
             <footer class="py-5 border-t-2 border-gray-700 text-center flex items-center justify-center bg-[#fefdf9] ">
