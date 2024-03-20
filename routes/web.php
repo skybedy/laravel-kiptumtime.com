@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\StravaController;
+use App\Http\Controllers\AboutController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\TestEmail;
@@ -25,10 +26,11 @@ use App\Mail\TestEmail;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/how-it-works', [HowItWorksController::class, 'index'])->name('how_it_works.index');
-Route::get('/redirect-strava/{userId}', [StravaController::class, 'redirectStrava'])->name('redirect_strava');
+Route::get('/redirect-strava/', [StravaController::class, 'redirectStrava'])->name('redirect_strava');
 Route::get('/webhook', [StravaController::class, 'getStrava'])->name('get_strava');
 Route::post('/webhook', [StravaController::class, 'webhookPostStrava'])->name('post_strava');
 Route::get('/webhook/autoupload', [StravaController::class, 'autouploadStrava'])->name('autoupload_strava');
+Route::get('/about', AboutController::class)->name('about');
 
 Route::middleware('auth')->group(function () {
     Route::get('/event/{eventId}/upload-url', [EventController::class, 'uploadUrlCreate'])->name('event.upload-url.create');

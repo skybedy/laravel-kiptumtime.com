@@ -26,6 +26,10 @@
                                     <p class="mt-2">This is the link that you copy from the browser address bar (Chrome,Firefox,Edge, etc.), regardless of whether you are on a desktop/laptop or mobile/tablet and the page that has the run you want to upload to the VirtualRun results <br>
 The number after the last slash "123456789" will of course be replaced by your activity number in real life. </p>
                                     <div class="mt-2"><img class="img-fluid border" src="/strava-url-browser-example.png" /></div>
+                                    <h3 class="text-sm sm:text-xl text-orange-700 font-black mt-5 sm:mt-10">To give you a better idea, this video is available</h3>
+                                    <iframe class="mt-1" width="560" height="315" src="https://www.youtube.com/embed/oGJuW4fvcc4?si=Q-KRLZGGAAukpsoG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
                                     <hr class="mt-10">
                                     <div class="text-orange-700 text-sm sm:text-xl font-black mt-10">2) https://strava.app.link/abc123</div>
                                     <p class="mt-2">Unlike the first way, where the link is copied from the browser's address bar, here it is copied from the mobile application via sharing to the clipboard, which then creates a link in the form shown above.<br>
@@ -33,6 +37,9 @@ Due to the fact that the development of applications not only from Strava is fas
 Of course, also here the characters after the last slash "abc123" will be replaced by your activity characters in real life.</p>
                                     </p>
                                     <div class="mt-2"><img class="img-fluid border" src="/strava-url-app-example.png" /></div>
+                                    <h3 class="text-sm sm:text-xl text-orange-700 font-black mt-5 sm:mt-10">For this way as well is availbale the video</h3>
+                                    <iframe class="mt-1" width="560" height="315" src="https://www.youtube.com/embed/qttfodxPdl4?si=2hECgGrmuE0M6XDf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
                                 </div>
 
                     </div>

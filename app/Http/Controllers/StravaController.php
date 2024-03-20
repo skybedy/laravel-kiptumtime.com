@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Exceptions\DuplicateStravaAuthorizationException;
+use App\Exceptions\DuplicateSTRAVAAuthorizationException;
 use App\Models\Event;
 use App\Models\Registration;
 use App\Models\Result;
@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Log;
 
 
 
-class StravaController extends Controller
+class STRAVAController extends Controller
 {
 
     /**
      *   zpracování webhook  ze Stravy
     */
-    public function webhookPostStrava(Request $request, ResultService $resultService, Registration $registration, TrackPoint $trackPoint, Event $event)
+    public function webhookPostSTRAVA(Request $request, ResultService $resultService, Registration $registration, TrackPoint $trackPoint, Event $event)
     {
 
 
@@ -120,7 +120,7 @@ class StravaController extends Controller
     {
 
         //return $dataStream;
-        $finishTime = $resultService->getActivityFinishDataFromStravaWebhook($dataStream, $registration, $userId);
+        $finishTime = $resultService->getActivityFinishDataFromSTRAVAWebhook($dataStream, $registration, $userId);
 
      
         $result = new Result();
@@ -186,7 +186,7 @@ class StravaController extends Controller
         Log::info('Uzivatel '.$userId.' nahral aktivitu.');
     }
 
-    public function getStrava(Request $request)
+    public function getSTRAVA(Request $request)
     {
 
         \Log::info($request->query());
@@ -222,7 +222,7 @@ class StravaController extends Controller
 
 
 
-    public function autouploadStrava(ResultService $resultService, Registration $registration, TrackPoint $trackPoint, Event $event)
+    public function autouploadSTRAVA(ResultService $resultService, Registration $registration, TrackPoint $trackPoint, Event $event)
     {
 
         $url = 'https://www.strava.com/api/v3/activities/10873132617/streams?keys=time,latlng,altitude,cadence&key_by_type=true';
@@ -235,9 +235,9 @@ class StravaController extends Controller
             $response += Http::withToken($token)->get($url)->json();
             // dd($response);
 
-            $user = $this->getUserByStravaId(132624638);
+            $user = $this->getUserBySTRAVAId(132624638);
 
-            $finishTime = $resultService->getActivityFinishDataFromStravaWebhook($response, $registration, $user->id);
+            $finishTime = $resultService->getActivityFinishDataFromSTRAVAWebhook($response, $registration, $user->id);
 
             $result = new Result();
 
@@ -296,14 +296,13 @@ class StravaController extends Controller
     }
 
 
-    private function getUserByStravaId($stravaId)
+    private function getUserBySTRAVAId($stravaId)
     {
         return User::select('id', 'strava_access_token', 'strava_refresh_token', 'strava_expires_at')->where('strava_id', $stravaId)->first();
     }
 
-    public function redirectStrava(Request $request)
+    public function redirectSTRAVA(Request $request)
     {
-//dd($request);
         $response = Http::post('https://www.strava.com/oauth/token', [
             'client_id' => '117954',
             'client_secret' => 'a56df3b8bb06067ebe76c7d23af8ee8211d11381',
@@ -313,54 +312,48 @@ class StravaController extends Controller
 
         $body = $response->body();
         $content = json_decode($body, true);
-        //dd($content);
-
-        try{
-            
-        
-        if(User::firstWhere('strava_id', $content['athlete']['id']))
-        {
-            throw new DuplicateStravaAuthorizationException();
-        }
-        
-        $user = User::find($request->userId);
-        $user->strava_id = $content['athlete']['id'];
-        $user->strava_access_token = $content['access_token'];
-        $user->strava_refresh_token = $content['refresh_token'];
-        $user->strava_expires_at = $content['expires_at'];
-        $user->strava_scope = $request->query('scope');
-        $user->save();
-    }
-    catch(DuplicateStravaAuthorizationException $e)
-    {
-        
-        $parsedUrl = parse_url($request->referer);
-      //  dd($parsedUrl['path']);
     
 
-        
-        
-        return redirect('https://kiptumtime.com'.$request->query('path'))->with('error',$e->getMessage()); 
-    }
+        try{
+            if(User::firstWhere('strava_id', $content['athlete']['id']))
+            {
+                throw new DuplicateSTRAVAAuthorizationException();
+            }
 
-        return redirect('/');
+            $user = User::find($request->user()->id);
 
-        
+            $user->strava_id = $content['athlete']['id'];
 
+            $user->strava_access_token = $content['access_token'];
+
+            $user->strava_refresh_token = $content['refresh_token'];
+
+            $user->strava_expires_at = $content['expires_at'];
+
+            $user->strava_scope = $request->query('scope');
+
+            $user->save();
+        }
+        catch(DuplicateSTRAVAAuthorizationException $e)
+        {
+            $parsedUrl = parse_url($request->referer);
+
+            return redirect('https://kiptumtime.com'.$request->query('path'))->with('error',$e->getMessage()); 
+        }
+
+        return redirect(env('APP_URL').$request->query('path'))->with('info','STRAVA has been successfully authorised, you can upload activities or they will be uploaded automatically when STRAVA accepts them');
     }
 
     //simulace autonahrani ze Stravy
 
-    public function authorizeStrava(Request $request)
+    public function authorizeSTRAVA(Request $request)
     {
-        $referer = request()->header('Referer');
-       // dd($referer);
+        $referer = $request->header('Referer');
+
         $parsedUrl = parse_url($referer);
 
-$path = $parsedUrl['path'];
+        $path = $parsedUrl['path'];
 
-
-        
-        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava/'.$request->user()->id.'?path='.$path.'&approval_prompt=force&scope=activity:read_all');
+        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read_all');
     }
 }

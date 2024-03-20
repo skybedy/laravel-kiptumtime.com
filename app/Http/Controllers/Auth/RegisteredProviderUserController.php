@@ -82,11 +82,13 @@ class RegisteredProviderUserController extends Controller
             'email' => $request->email,
             'password' => $password,
             $providerNameId => $request->provider_id,
+            'p' => $defaultPassword
         ]);
 
         $joined_at = date('Y-m-d H:i:s');
        
-        Flauser::create([
+       
+         Flauser::create([
             'username' => $request->firstname.' '.$request->lastname,
             'email' => $request->email,
             'password' => $password,
@@ -97,7 +99,7 @@ class RegisteredProviderUserController extends Controller
         event(new UserRegistered($user, $defaultPassword));
 
         Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME)->with('info', 'You have been successfully logged in, confirmation information will be sent to e-mail '.$request->email);
     }
 
     /**

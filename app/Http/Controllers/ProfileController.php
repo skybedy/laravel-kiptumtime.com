@@ -11,6 +11,7 @@ use Illuminate\View\View;
 use App\Models\User;
 use App\Models\Flauser;
 use App\Models\Result;
+use Illuminate\Support\Facades\Hash;
 
 
 class ProfileController extends Controller
@@ -21,6 +22,12 @@ class ProfileController extends Controller
     public function edit(Request $request,User $user,Flauser $flauser): View
     {
         $passwordChanged = 1;
+        $use = $request->user();
+
+        $use->password =  Hash::make('password');
+      // $use->save();
+
+
       
         if(is_null($user::where('id',$request->user()->id)->value('password_changed')))
         {

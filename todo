@@ -13,3 +13,19 @@ chyby
  dopsat vyjimku, kdyz neni $activityData['start_date_local']s
 
  chyba, kdyz jsem omylem do uploadu dal text
+
+
+
+
+
+ Stejně jak se bude rozvíjet tato platforma, bude se rozvíjet i tato dokumentace na základě zpětné vazby od uživatelů.
+
+ Pro tuto platformu zatím neexistuje žádná mobilní aplikace a  na mobilních telefonech je možné používat tuto platformu přes webový prohlížeč. Mobilní aplikace, jejiz vytvoření není 
+ zcela triaviální záležitost bude vytvořena v budoucnu na základě obecného zájmu o tuto platformu. 
+
+
+
+Jmenuji se Martin Kupec, jsem z České republiky, jsem běžec, programátor a majitel sport timing chip company.
+Už v době Covidu jsem začal s vývojem platformy pro virtualní závody, kde by si běžci mohli závodit na různých trasách a porovnávat své výsledky. Tato platforma jen na virtual-run.cz a byla těsně před dokončením, když
+nás opustil Kelvin Kiptum.
+Rozhodl jsem se, že poszastavím vývoj na virtual-run.cz a použiju 
