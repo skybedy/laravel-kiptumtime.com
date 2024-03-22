@@ -15,6 +15,7 @@
     <p>
         Default Password: {{ $defaultPassword }}
     </p>
+    <p>Martin Kupec, <a href="https://kiptumtime.com/about">kiptumtime.com/about</a></p>
 </body>
 </html>
 

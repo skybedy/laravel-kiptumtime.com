@@ -66,9 +66,9 @@ input[type=file]::file-selector-button:hover {
         <div class="flex flex-col h-screen justify-between">
             @include('layouts.navigation')
             <!-- Page Content -->
-            <main class="mb-auto">
+        
                 {{ $slot }}
-            </main>
+        
             <footer class="py-5 border-t-2 border-gray-700 text-center flex items-center justify-center bg-[#fefdf9] ">
                 <p class="text-md xs:text-2xl sm:text-3xl text-gray-600 font-black">Dedicated to the memory of Kelvin Kiptum</p>
             </footer>

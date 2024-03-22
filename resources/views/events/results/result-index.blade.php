@@ -1,10 +1,12 @@
 <x-app-layout>
     @section('title', 'results')
+
+    <main class="mb-auto">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <x-event-navbar :event="$event" />
+                 
                     <div class="overflow-auto">
                         <table id="result_table" class="hidden md:table table-auto border-collapse w-full mt-5">
                             <tr class="">
@@ -93,6 +95,7 @@
             </div>
         </div>
     </div>
+    </main>
 
 </x-app-layout>
 

@@ -9,21 +9,18 @@
                     <p class="text-xl mt-4 font-black text-red-600">Please excuse the fact, that the English used here in this moment is not very good, this application was created in a hurry and the author does not speak English very well.
                         Most of the text used here comes from the DeepL translator, but this will change over time.
                     </p>
+                    <h2 class="text-2xl text-orange-500 underline mt-10">Introduction</h2>
+                    <p class="text-xl mt-4">
+                        {{ __('messages.trans_1') }}
+                    </p>
+                    <p class="text-xl mt-4"> 
+                        {{ __('messages.trans_2') }}<br>
+                        {{ __('messages.trans_3') }}
+                    
+                    </p>    
+                    
 
-
-
-
-                              <h2 class="text-2xl text-orange-500 underline mt-10">Introduction</h2>
-                              <p class="text-xl mt-4">
-
-                     Probably any normal person would prefer that this site didn't exist, but it is what it is and in memory of Kelvin Kiptum
-this platform has been created where runners from all over the world can submit their bull runs achieved in 2:00:35, Kelvin's time.
-at the Chicago Marathon on October 8, 2023, resulting in the longest distance run in 2:00:35.<br><br>
-
-
-This app is completely free, fully automatic and works 24/7. It is likely that the platform's concept will change in the future
-depending on the interest, this first version will last until 8.10.24 and each runner can present any number of results, with the total results
-the best one will be counted. The condition for participation is that each runner has an account on Strava.<br><br>
+                    <p class="text-xl mt-4"> 
 
 Runs are uploaded to the app either automatically when they are uploaded to the Strava after your run, but they can also be uploaded afterwards by copying them
 by copying the link to the relevant activity.<br><br>
@@ -34,7 +31,7 @@ and subtracts the average time that was reached by 2:00:35 from the total run ti
 
 
                     <h2 class="text-2xl text-orange-500 underline mt-10">Test mode</h2>
-                    <p class="text-xl mt-3"
+                    <p class="text-xl mt-3">
                        At the moment the application is running in test mode and the documentation and procedures will be continuously updated.<br>
                        It is very likely that there are still some bugs in the application that will be addressed operationally.
 

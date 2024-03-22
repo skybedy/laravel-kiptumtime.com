@@ -31,7 +31,7 @@ class TestEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test Email',
+            subject: 'Kiptumtime - successful registration',
         );
     }
 

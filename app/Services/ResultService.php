@@ -842,7 +842,14 @@ class ResultService
 
             $timeObj = Carbon::createFromTime(0, 0, 0)->addSeconds($secondPerKm);
 
-            return substr($timeObj->format('i:s'), 1);
+            if($secondPerKm > 599)
+            {
+                return $timeObj->format('i:s');
+            }
+            else
+            {
+                return substr($timeObj->format('i:s'), 1);
+            }
         }
 
         private function pacePerMile($eventDistance,$finishTimeSec)
@@ -850,8 +857,17 @@ class ResultService
             $secondPerMile = round(($finishTimeSec * 1609.3) / $eventDistance);
 
             $timeObj = Carbon::createFromTime(0, 0, 0)->addSeconds($secondPerMile);
+            
+            if($secondPerMile > 599)
+            {
+                return $timeObj->format('i:s');
+            }
+            else
+            {
+                return substr($timeObj->format('i:s'), 1);
+            }
 
-            return substr($timeObj->format('i:s'), 1);
+           
         }
 
 
