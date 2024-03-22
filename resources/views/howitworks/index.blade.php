@@ -23,31 +23,12 @@
                     <p>{{ __('messages.trans_8') }}</p>
                     <h2>{{ __('messages.cadence') }}</h2>
                     <p>{!! __('messages.trans_9') !!}</p>
-                        <h2 class="text-2xl text-orange-500 underline mt-10">Method of calculating time and distance</h2>
-                        <p class="text-xl mt-3">
-
-                           As already mentioned, the app calculates everything within 2:00:35, however, it should be noted that probably no watch records the position every second, but at intervals that vary. Therefore, if, for example
-the record of your run does not contain a time marker at 2:00:35, it will stop at the first possible time after it, say 2:00:38, subtract 3 seconds and subtract the distance covered in those 3 seconds by calculating the average speed up to that time.
-
-We all know this, we run for an hour, then take a 15 minute break, then run for an hour again, but Strava calculates our pace and distance for the two hours. The fact that it actually took 2:15 is indicated by the
-Elapsed Time.
-
-That's not the case here, the result is the total time from the start of the run to the end of the run, if we take a break during the run, that counts towards the result. Therefore, you can not be surprised that if you take a break, Strava
-shows you a different result than our app. Watch out for this.
-                        </p>
-
-
-
-                        <h2 class="text-2xl text-orange-500 underline mt-10">Trickies of the Strava</h2>
-                        <p class="text-xl mt-3">
-
-                            Strava is a great helper, but it has its own laws and these need to be taken into account.
-As is probably obvious, the method of distance between two GPS points is not entirely accurate. Several principles are used for this purpose, such as the Haversine or Vincenty formula, for example. Strava, or Garmin but accurate ways
-calculation of distance are hidden, so we can never get indentically the same results on this platform, but that's okay, because the important thing is that the calculation of all results for which the Haversine formula is used on this platform is done in the same way for all
-                        </p>
-
-
-
+                    <h2>{{ __('messages.headline_5') }}</h2>
+                    <p>{!! __('messages.trans_10') !!}</p>
+                    <p>{!! __('messages.trans_11') !!}</p>
+                    <h2>{{ __('messages.headline_6') }}</h2>
+                    <p>{!! __('messages.trans_12') !!}</p>
+                    <p>{!! __('messages.trans_13') !!}</p>
 
                         <div class="mt-10">
                             <h2 class="text-2xl text-orange-500 underline">Age groups</h2>
