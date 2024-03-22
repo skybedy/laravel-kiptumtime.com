@@ -3,93 +3,26 @@
     <div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-10">
-                  <div class="md:p-6 text-gray-900 bg-rd-500">
+                  <div class="p-standard md:p-6 text-gray-900 bg-rd-500">
 
-                    <h2 class="h2-orange">English here used righ now</h2>
+                    <h2>English here used righ now</h2>
                     <p class="p-standard font-black text-red-600">Please excuse the fact, that the English used here in this moment is not very good, this application was created in a hurry and the author does not speak English very well.
                         Most of the text used here comes from the DeepL translator, but this will change over time.
                     </p>
-
-                    <h2 class="h2-orange">{{ __('messages.headline_1') }}</h2>
-                    <p class="p-standard">
-                        {{ __('messages.trans_1') }}
-                    </p>
-                    <p class="p-standard">
-                        {{ __('messages.trans_2') }}
-                    </p>
-                    <p class="p-standard">
-                        {{ __('messages.trans_3') }}
-                    </p>
-
-                    <h2 class="h2-orange">{{ __('messages.headline_2') }}</h2>
-                    <p class="p-standard">
-                        {{ __('messages.trans_6') }}
-                    </p>
-
-
-
-
-                    <h2 class="h2-orange">{{ __('messages.headline_3') }}</h2>
-                    <p class="p-standard">
-                        {{ __('messages.trans_4') }}
-                    </p>
-                    <p class="p-standard">
-                        {{ __('messages.trans_5') }}
-                    </p>
-                    <p class="p-standard">
-                        {{ __('messages.trans_7') }}
-                    </p>
-
-
-
-
- <h2 class="text-2xl text-orange-500 underline mt-10">Forum</h2>
- <p class="text-xl mt-3" >The forum is a place where you can ask questions, share your experiences, and discuss the app. The forum is available to everyone, but only registered users can post. The forum is moderated and the administrator reserves the right to delete posts that are not in line with the rules of the forum. The forum is available at <a target="_blank" href="https://forum.kiptumtime.com" class="text-blue-500 underline">forum.kiptumtime.com</a></p>
-
-
-
-
-
-
-
-
-                         <div class="mt-10">
-                              <h2 class="text-2xl text-orange-500 underline">Age groups</h2>
-                              <p class="text-xl mt-3" > Classification into the age group is done according to the year of birth, if someone does not want to indicate their year of birth they will automatically be classified into the OPEN group.</p>
-
-                              <ul class="list-disc text-xl list-inside mt-5">
-                              <li>18-22 (U23)</li>
-                              <li>24-29 (OPEN)</li>
-                              <li>30-34</li>
-                              <li>35-39</li>
-                              <li>40-44</li>
-                              <li>45-49</li>
-                              <li>50-54</li>
-                              <li>55-59</li>
-                              <li>60-64</li>
-                              <li>65-69</li>
-                              <li>70-74</li>
-                              <li>75-79</li>
-                              <li>80+</li>
-                              </ul>
-                              </p>
-                        </div>
-
-                        <h2 class="text-2xl text-orange-500 underline mt-10">It's ONLY GPS</h2>
-                        <p class="text-xl mt-3">
-                            GPS in principle is not, nor can it be, an accurate way to "do" race results, it depends on multiple variables from the location and terrain where the data is taken to the equipment to receive GPS better and worse
-quality, and this does not allow for the same conditions to ensure that the same route and time is recorded anywhere and by anyone in the world. For this reason, the results cannot be taken deadly seriously, as this method of processing simply
-there is no way to provide the same cues to every user. So please be lenient.
-
-
-                        </p>
-                        <h2 class="text-2xl text-orange-500 underline mt-10">Cadence</h2>
-                        <p class="text-xl mt-3">
-                            Cadence is one of the values provided to us by most modern watch manufacturers. In our results processing, cadence is used as a control to see if the activity was actually run or recorded in some other, non-running way.
-                            Of course, everything can be circumvented these days, but cadence monitoring is one of the things that tries to make that circumvention more difficult.
-                            For this reason, it's not possible to use data from cell phones alone to record results, because they don't record cadence themselves, and activity from them simply doesn't get recorded in the results.
-                        </p>
-
+                    <h2>{{ __('messages.headline_1') }}</h2>
+                    <p>{{ __('messages.trans_1') }}</p>
+                    <p>{{ __('messages.trans_2') }}</p>
+                    <p>{{ __('messages.trans_3') }}</p>
+                    <h2>{{ __('messages.headline_2') }}</h2>
+                    <p>{{ __('messages.trans_6') }}/p>
+                    <h2>{{ __('messages.headline_3') }}</h2>
+                    <p>{{ __('messages.trans_4') }}</p>
+                    <p>{{ __('messages.trans_5') }}</p>
+                    <p>{{ __('messages.trans_7') }}</p>
+                    <h2>{{ __('messages.headline_4') }}</h2>
+                    <p>{{ __('messages.trans_8') }}</p>
+                    <h2>{{ __('messages.cadence') }}</h2>
+                    <p>{!! __('messages.trans_9') !!}</p>
                         <h2 class="text-2xl text-orange-500 underline mt-10">Method of calculating time and distance</h2>
                         <p class="text-xl mt-3">
 
@@ -113,6 +46,31 @@ As is probably obvious, the method of distance between two GPS points is not ent
 calculation of distance are hidden, so we can never get indentically the same results on this platform, but that's okay, because the important thing is that the calculation of all results for which the Haversine formula is used on this platform is done in the same way for all
                         </p>
 
+
+
+
+                        <div class="mt-10">
+                            <h2 class="text-2xl text-orange-500 underline">Age groups</h2>
+                            <p class="text-xl mt-3" > Classification into the age group is done according to the year of birth, if someone does not want to indicate their year of birth they will automatically be classified into the OPEN group.</p>
+
+                            <ul class="list-disc text-xl list-inside mt-5">
+                            <li>18-22 (U23)</li>
+                            <li>24-29 (OPEN)</li>
+                            <li>30-34</li>
+                            <li>35-39</li>
+                            <li>40-44</li>
+                            <li>45-49</li>
+                            <li>50-54</li>
+                            <li>55-59</li>
+                            <li>60-64</li>
+                            <li>65-69</li>
+                            <li>70-74</li>
+                            <li>75-79</li>
+                            <li>80+</li>
+                            </ul>
+                            </p>
+                      </div>c
+
                         <h2 class="text-2xl text-orange-500 underline mt-10">Mobile App</h2>
                         <p class="text-xl mt-3">
 
@@ -126,6 +84,11 @@ calculation of distance are hidden, so we can never get indentically the same re
 
                             As the platform evolves, this documentation will evolve based on user feedback.
                         </p>
+
+
+ <h2 class="text-2xl text-orange-500 underline mt-10">Forum</h2>
+ <p class="text-xl mt-3" >The forum is a place where you can ask questions, share your experiences, and discuss the app. The forum is available to everyone, but only registered users can post. The forum is moderated and the administrator reserves the right to delete posts that are not in line with the rules of the forum. The forum is available at <a target="_blank" href="https://forum.kiptumtime.com" class="text-blue-500 underline">forum.kiptumtime.com</a></p>
+
 
 
 

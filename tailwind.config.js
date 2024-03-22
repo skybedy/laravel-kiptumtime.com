@@ -27,12 +27,12 @@ export default {
         forms,
         function({ addBase, config }) {
             addBase({
-                '.p-standard': {
+                '.p-standard p': {
                     'margin-top': config('theme.spacing.3'),
                     'font-size': config('theme.fontSize.xl'),
 
                 },
-                '.h2-orange' : {
+                'h2' : {
                     'font-size': config('theme.fontSize.2xl'), // odpovídá třídě 'text-2xl'
                     'color': config('theme.colors.orange.500'), // odpovídá třídě 'text-orange-500'
                     'text-decoration': 'underline', // odpovídá třídě 'underline'
