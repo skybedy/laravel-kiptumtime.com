@@ -23,7 +23,25 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        function({ addBase, config }) {
+            addBase({
+                '.p-standard': {
+                    'margin-top': config('theme.spacing.3'),
+                    'font-size': config('theme.fontSize.xl'),
+
+                },
+                '.h2-orange' : {
+                    'font-size': config('theme.fontSize.2xl'), // odpovídá třídě 'text-2xl'
+                    'color': config('theme.colors.orange.500'), // odpovídá třídě 'text-orange-500'
+                    'text-decoration': 'underline', // odpovídá třídě 'underline'
+                    'margin-top': config('theme.spacing.10'), // odpovídá třídě 'mt-10'
+                    // další styly..
+                }
+            });
+        },
+    ],
 
 
 };

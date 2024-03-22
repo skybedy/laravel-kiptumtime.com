@@ -5,37 +5,43 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-10">
                   <div class="md:p-6 text-gray-900 bg-rd-500">
 
-                    <h2 class="text-2xl text-blue-500 underline mt-10">English here used righ now</h2>
-                    <p class="text-xl mt-4 font-black text-red-600">Please excuse the fact, that the English used here in this moment is not very good, this application was created in a hurry and the author does not speak English very well.
+                    <h2 class="h2-orange">English here used righ now</h2>
+                    <p class="p-standard font-black text-red-600">Please excuse the fact, that the English used here in this moment is not very good, this application was created in a hurry and the author does not speak English very well.
                         Most of the text used here comes from the DeepL translator, but this will change over time.
                     </p>
-                    <h2 class="text-2xl text-orange-500 underline mt-10">Introduction</h2>
-                    <p class="text-xl mt-4">
+
+                    <h2 class="h2-orange">{{ __('messages.headline_1') }}</h2>
+                    <p class="p-standard">
                         {{ __('messages.trans_1') }}
                     </p>
-                    <p class="text-xl mt-4"> 
-                        {{ __('messages.trans_2') }}<br>
-                        {{ __('messages.trans_3') }}
-                    
-                    </p>    
-                    
-
-                    <p class="text-xl mt-4"> 
-
-Runs are uploaded to the app either automatically when they are uploaded to the Strava after your run, but they can also be uploaded afterwards by copying them
-by copying the link to the relevant activity.<br><br>
-
-The app accepts all runs that last 2:00:35 or longer. When a run is longer than 2:00:35, the application removes everything over that time
-and subtracts the average time that was reached by 2:00:35 from the total run time.
-                              </p>
-
-
-                    <h2 class="text-2xl text-orange-500 underline mt-10">Test mode</h2>
-                    <p class="text-xl mt-3">
-                       At the moment the application is running in test mode and the documentation and procedures will be continuously updated.<br>
-                       It is very likely that there are still some bugs in the application that will be addressed operationally.
-
+                    <p class="p-standard">
+                        {{ __('messages.trans_2') }}
                     </p>
+                    <p class="p-standard">
+                        {{ __('messages.trans_3') }}
+                    </p>
+
+                    <h2 class="h2-orange">{{ __('messages.headline_2') }}</h2>
+                    <p class="p-standard">
+                        {{ __('messages.trans_6') }}
+                    </p>
+
+
+
+
+                    <h2 class="h2-orange">{{ __('messages.headline_3') }}</h2>
+                    <p class="p-standard">
+                        {{ __('messages.trans_4') }}
+                    </p>
+                    <p class="p-standard">
+                        {{ __('messages.trans_5') }}
+                    </p>
+                    <p class="p-standard">
+                        {{ __('messages.trans_7') }}
+                    </p>
+
+
+
 
  <h2 class="text-2xl text-orange-500 underline mt-10">Forum</h2>
  <p class="text-xl mt-3" >The forum is a place where you can ask questions, share your experiences, and discuss the app. The forum is available to everyone, but only registered users can post. The forum is moderated and the administrator reserves the right to delete posts that are not in line with the rules of the forum. The forum is available at <a target="_blank" href="https://forum.kiptumtime.com" class="text-blue-500 underline">forum.kiptumtime.com</a></p>
