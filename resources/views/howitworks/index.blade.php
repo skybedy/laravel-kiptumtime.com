@@ -4,11 +4,6 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-10">
                   <div class="p-standard md:p-6 text-gray-900 bg-rd-500">
-
-                    <h2>English here used righ now</h2>
-                    <p class="p-standard font-black text-red-600">Please excuse the fact, that the English used here in this moment is not very good, this application was created in a hurry and the author does not speak English very well.
-                        Most of the text used here comes from the DeepL translator, but this will change over time.
-                    </p>
                     <h2>{{ __('messages.headline_1') }}</h2>
                     <p>{{ __('messages.trans_1') }}</p>
                     <p>{{ __('messages.trans_2') }}</p>
@@ -29,12 +24,10 @@
                     <h2>{{ __('messages.headline_6') }}</h2>
                     <p>{!! __('messages.trans_12') !!}</p>
                     <p>{!! __('messages.trans_13') !!}</p>
-
-                        <div class="mt-10">
-                            <h2 class="text-2xl text-orange-500 underline">Age groups</h2>
-                            <p class="text-xl mt-3" > Classification into the age group is done according to the year of birth, if someone does not want to indicate their year of birth they will automatically be classified into the OPEN group.</p>
-
-                            <ul class="list-disc text-xl list-inside mt-5">
+                    <h2>{{ __('messages.headline_7') }}</h2>
+                    <p>{{ __('messages.trans_14') }}</p>
+                    <div class="mt-10">
+                        <ul class="list-disc text-xl list-inside mt-5">
                             <li>18-22 (U23)</li>
                             <li>24-29 (OPEN)</li>
                             <li>30-34</li>
@@ -48,9 +41,8 @@
                             <li>70-74</li>
                             <li>75-79</li>
                             <li>80+</li>
-                            </ul>
-                            </p>
-                      </div>c
+                        </ul>
+                    </div>
 
                         <h2 class="text-2xl text-orange-500 underline mt-10">Mobile App</h2>
                         <p class="text-xl mt-3">

@@ -19,6 +19,7 @@ return [
     'headline_4'=> "It's ONLY GPS",
     'headline_5'=> 'Method of calculating time and distance',
     'headline_6'=> 'Trickies of the Strava',
+    'headline_7'=> 'Age groups',
     'trans_1' => "Probably any normal person would prefer that this site didn't exist, but what's done is done and in memory of Kelvin Kiptum this platform has been created where runners from all over the world can submit their runs achieved in 2:00:35, Kelvin's time. at the Chicago Marathon on October 8, 2023.",
     'trans_2' => "This app is completely free, fully automatic and works 24/7. It is likely that the platform's concept will change in the future depending on the interest.",
     'trans_3' => "This first version/season will run from February 11, 2024 to October 8, 2024, it's maybe clear, what these dates mean, first one is date of Kelvin's fatal crash and second one is date of his world record.",
@@ -32,6 +33,6 @@ return [
     'trans_11' => "We all know this, we run for an hour, then take a 15 minute break, then run for an hour again, but the Strava calculates our pace and distance for the two hours. The fact that it actually took 2:15 is indicated by the Elapsed Time. <br>That's not the case of our platform, the result here is the total time from the start of the run to the end of the run and if we take a break during the run, that counts towards the result and therefore, you can not be surprised in this case, that the Strava will show you a different result than our platform.<br>By other words, our platform works with elapsed time, not moving time<br>Watch out for this.",
     'trans_12' => "The Strava is a great helper, but it has its own laws and these need to be taken into account.<br>As is probably obvious, the method of distance between two GPS points can't be entirely accurate. Several principles are used for this purpose, such as the Haversine or Vincenty formula, for example.",
     'trans_13' => "The Strava, or Garmin but have however their own private algorithms for calculation of distance, so we can never get indentically the same results on our platform as the Strava&Garmin,  however that's okay, because the most important thing is that the calculation of all results on our platform is done in the same way for all.<br> Btw - our platform uses for the calculation the mentioned Haversine formula.",
-
+    'trans_14' => "Similary as in standard events here are also age groups and they are the same for women and men and.<br>In a case, if you would like prefer to OPEN category, dont't fill the year of your birth when you'll be register and the platform assignes you to this category.",
 
 ];
