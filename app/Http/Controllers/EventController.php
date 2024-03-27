@@ -49,22 +49,29 @@ class EventController extends Controller
 
     public function uploadUrlCreate(Request $request, User $user)
     {
-      
+
+        $connectingStrava = true;
+
         if(is_null($user::where('id',$request->user()->id)->value('strava_id')))
         {
-            session()->flash('info','no_strava_authorization');
+         //   session()->flash('info','no_strava_authorization');
+
+            $connectingStrava = false;
         }
-        
-        
-        
+
+
+
         return view('events.results.upload-url-create', [
+
             'eventId' => $request->eventId,
+
+            'connectingStrava' => $connectingStrava,
         ]);
     }
 
     public function uploadFileCreate(Request $request, Event $event)
     {
-        
+
         return view('events.results.upload-file-create', [
             'event' => $event::find($request->eventId),
         ]);

@@ -5,6 +5,5 @@
         @else
             {{ session('info') }}
         @endif
-  
     </div>
 @endif
