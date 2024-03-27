@@ -14,7 +14,7 @@
                     <p>{{ __('messages.trans_2') }}</p>
                     <p>{{ __('messages.trans_3') }}</p>
                     <h2>{{ __('messages.headline_2') }}</h2>
-                    <p>{{ __('messages.trans_6') }}/p>
+                    <p>{{ __('messages.trans_6') }}</p>
                     <h2>{{ __('messages.headline_3') }}</h2>
                     <p>{{ __('messages.trans_4') }}</p>
                     <p>{{ __('messages.trans_5') }}</p>
