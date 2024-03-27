@@ -10,32 +10,32 @@
                 <a href="{{ route('index') }}">
                     <x-application-logo class="block h-9 w-auto fill-current text-gray-80"  width="70px" height="70px" />
                 </a>&nbsp;&nbsp;&nbsp;
-                <div class="text-4xl text-gray-600">
-                    <a href="{{ route('index') }}">kiptumtime</a>   
+                <div class="text-4xl text-gray-500">
+                    <a href="{{ route('index') }}">kiptumtime</a>
                 </div>
             </div>
 
             <!-- Navigation Links -->
             <div class="hidden space-x-6 lg:space-x-8 sm:-my-px sm:ms-10 md:flex">
-                <x-nav-link :href="route('index')" :active="request()->routeIs('index')" class="text-lg lg:text-xl text-gray-600">
-                    {{ __('messages.home') }} 
+                <x-nav-link :href="route('index')" :active="request()->routeIs('index')" class="text-lg lg:text-xl text-gray-500">
+                    {{ __('messages.home') }}
                 </x-nav-link>
-                <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-600">
+                <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-500">
                     {{ __('messages.results') }}
                 </x-nav-link>
-                <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-600">
+                <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-500">
                     {{ __('messages.results_upload') }}
                 </x-nav-link>
-                <x-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('how_it_works.index')" class="text-lg lg:text-xl text-gray-600">
+                <x-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('how_it_works.index')" class="text-lg lg:text-xl text-gray-500">
                     {{ __('messages.how_it_works') }}
                 </x-nav-link>
-                <x-nav-link :href="'https://forum.kiptumtime.com'" class="text-lg lg:text-xl text-gray-600" target="_blank">
+                <x-nav-link :href="'https://forum.kiptumtime.com'" class="text-lg lg:text-xl text-gray-500" target="_blank">
                     {{ __('messages.forum') }}
                 </x-nav-link>
-                <x-nav-link :href="route('about')"  class="text-lg lg:text-xl text-gray-600">
+                <x-nav-link :href="route('about')"  class="text-lg lg:text-xl text-gray-500">
                     {{ __('messages.about') }}
                 </x-nav-link>
-           
+
                 <!-- Settings Dropdown -->
                 <div class="hidden md:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right" width="48">
@@ -70,7 +70,7 @@
                     </x-dropdown>
                 </div>
             </div>
-           
+
             <!-- Hamburger -->
             <div class="flex items-center md:hidden">
                 <button @click="open = ! open" class="inline-flex items-center justify-center  rounded-md text-white hover:white hover:bg-gray-800 focus:outline-none focus:bg-gray-800 focus:text-white transition duration-150 ease-in-out bg-gray-800 mr-1">
@@ -80,17 +80,17 @@
                     </svg>
                 </button>
             </div>
-        
+
         </div>
-    
+
     </div>
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-     
+
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
-                 {{ __('messages.home') }} 
+                 {{ __('messages.home') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('index')">
                  {{ __('messages.results') }}
@@ -111,7 +111,7 @@
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-            
+
             <div class="px-4">
                 @auth
                     <div class="font-medium text-base text-gray-800">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
@@ -139,7 +139,7 @@
                     </x-responsive-nav-link>
                 </form>
             </div>
-        
+
         </div>
 
     </div>
