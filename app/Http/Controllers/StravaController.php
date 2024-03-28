@@ -341,7 +341,7 @@ class STRAVAController extends Controller
             return redirect('https://kiptumtime.com'.$request->query('path'))->with('error',$e->getMessage()); 
         }
 
-        return redirect(env('APP_URL').$request->query('path'))->with('info','You was succesfully connected to the STRAVA, you can upload activities or they will be uploaded automatically when STRAVA accepts them');
+        return redirect(env('APP_URL').$request->query('path'))->with('info','You was succesfully connected to the STRAVA, you can upload activities or they will be uploaded automatically when STRAVA accepts them from Garmin, etc.');
     }
 
     //simulace autonahrani ze Stravy
