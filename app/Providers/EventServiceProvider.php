@@ -22,6 +22,9 @@ class EventServiceProvider extends ServiceProvider
         UserRegistered::class => [
             RegisterUserToRace::class,
         ],
+        \SocialiteProviders\Manager\SocialiteWasCalled::class  => [
+            \SocialiteProviders\Strava\StravaExtendSocialite::class.'@handle',
+        ],
     ];
 
     /**

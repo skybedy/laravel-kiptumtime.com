@@ -26,7 +26,7 @@ use App\Mail\TestEmail;
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('/how-it-works', [HowItWorksController::class, 'index'])->name('how_it_works.index');
-Route::get('/redirect-strava/', [StravaController::class, 'redirectStrava'])->name('redirect_strava');
+Route::get('/redirect-strava', [StravaController::class, 'redirectStrava'])->name('redirect_strava');
 Route::get('/webhook', [StravaController::class, 'getStrava'])->name('get_strava');
 Route::post('/webhook', [StravaController::class, 'webhookPostStrava'])->name('post_strava');
 Route::get('/webhook/autoupload', [StravaController::class, 'autouploadStrava'])->name('autoupload_strava');
@@ -79,6 +79,6 @@ Route::get('/test-email', function () {
 
 Route::get('testmail', function () {
     Mail::to('skybedy@gmail.com')->send(new TestEmail());
-   }); 
+   });
 
 require __DIR__.'/auth.php';

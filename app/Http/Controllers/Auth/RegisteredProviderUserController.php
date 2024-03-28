@@ -57,7 +57,10 @@ class RegisteredProviderUserController extends Controller
             case 'google':
                 $providerNameId = 'google_id';
                 break;
-        }
+                case 'strava':
+                    $providerNameId = 'strava_id';
+                    break;
+            }
 
         $request->validate([
             'lastname' => 'required|string|max:255',
@@ -69,9 +72,9 @@ class RegisteredProviderUserController extends Controller
         ]);
 
         $defaultPassword = Str::random(8);
-       
+
         $password = Hash::make($defaultPassword);
-      
+
         $user = User::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
@@ -86,8 +89,8 @@ class RegisteredProviderUserController extends Controller
         ]);
 
         $joined_at = date('Y-m-d H:i:s');
-       
-       
+
+
          Flauser::create([
             'username' => $request->firstname.' '.$request->lastname,
             'email' => $request->email,

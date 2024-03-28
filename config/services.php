@@ -42,5 +42,10 @@ return [
         'client_secret' => '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',
         'redirect' => env('APP_URL').'/auth/google/callback',
     ],
+    'strava' => [
+        'client_id' => env('STRAVA_CLIENT_ID'),
+        'client_secret' => env('STRAVA_CLIENT_SECRET'),
+        'redirect' => env('APP_URL').'/auth/strava/callback',
+    ],
 
 ];

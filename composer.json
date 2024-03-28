@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.8",
         "orchestra/parser": "^8.0",
         "petercoles/multilingual-country-list": "^1.2",
+        "socialiteproviders/strava": "^4.1",
         "statikbe/laravel-cookie-consent": "^1.6"
     },
     "require-dev": {
