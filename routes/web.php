@@ -71,6 +71,8 @@ Route::controller(RegisteredProviderUserController::class)->group(function () {
     Route::get('auth/{provider}/callback', 'handleProviderCallback');
     Route::get('register-socialite', 'create')->name('register-socialite');
     Route::post('register-socialite', 'store')->name('register-socialite');
+    Route::get('auth/{provider}/test', 'redirectToProviderTest');
+    Route::get('auth/{provider}/callback/test', 'handleProviderCallbackTest');
 });
 
 Route::get('/test-email', function () {

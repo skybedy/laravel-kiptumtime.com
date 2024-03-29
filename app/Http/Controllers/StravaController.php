@@ -317,7 +317,7 @@ class STRAVAController extends Controller
         try{
             if(User::firstWhere('strava_id', $content['athlete']['id']))
             {
-                throw new DuplicateSTRAVAAuthorizationException();
+                //throw new DuplicateSTRAVAAuthorizationException(); //tohle se musi doupravit, predtim to byla posjitka proti duplicitam
             }
 
             $user = User::find($request->user()->id);
@@ -354,6 +354,6 @@ class STRAVAController extends Controller
 
         $path = $parsedUrl['path'];
 
-        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read_all');
+        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read');
     }
 }

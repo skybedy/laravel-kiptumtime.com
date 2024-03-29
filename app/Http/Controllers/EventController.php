@@ -52,7 +52,7 @@ class EventController extends Controller
 
         $connectingStrava = true;
 
-        if(is_null($user::where('id',$request->user()->id)->value('strava_id')))
+        if(is_null($user::where('id',$request->user()->id)->value('strava_scope')))
         {
          //   session()->flash('info','no_strava_authorization');
 

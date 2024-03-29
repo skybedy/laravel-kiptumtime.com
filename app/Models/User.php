@@ -28,6 +28,7 @@ class User extends Authenticatable
         'password',
         'facebook_id',
         'google_id',
+        'strava_id',
         'password_changed',
         'p',
     ];

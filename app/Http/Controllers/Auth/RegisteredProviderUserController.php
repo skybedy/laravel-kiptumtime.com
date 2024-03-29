@@ -50,6 +50,7 @@ class RegisteredProviderUserController extends Controller
     {
 
         $providerNameId = false;
+      
         switch ($request->provider_name) {
             case 'facebook':
                 $providerNameId = 'facebook_id';
@@ -57,9 +58,9 @@ class RegisteredProviderUserController extends Controller
             case 'google':
                 $providerNameId = 'google_id';
                 break;
-                case 'strava':
-                    $providerNameId = 'strava_id';
-                    break;
+            case 'strava':
+                $providerNameId = 'strava_id';
+                break;
             }
 
         $request->validate([
@@ -102,7 +103,17 @@ class RegisteredProviderUserController extends Controller
         event(new UserRegistered($user, $defaultPassword));
 
         Auth::login($user);
-        return redirect(RouteServiceProvider::HOME)->with('info', 'You have been successfully logged in, confirmation information will be sent to e-mail '.$request->email);
+
+        if($request->provider_name == 'strava') {
+            $path = "";
+            return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read');
+        }
+        else
+        {
+            return redirect(RouteServiceProvider::HOME)->with('info', 'You have been successfully logged in, confirmation information will be sent to e-mail '.$request->email);
+
+        }
+       
     }
 
     /**
