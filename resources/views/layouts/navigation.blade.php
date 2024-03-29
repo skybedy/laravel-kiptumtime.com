@@ -1,5 +1,5 @@
 
-<nav x-data="{ open: false }" class="border-b-2 border-gray-800 bg-[#fefdf9] py-4">
+<nav x-data="{ open: false }" class="border-b-[20px] border-white bg-black py-4">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto sm:px-6 lg:px-8">
 
@@ -10,28 +10,28 @@
                 <a href="{{ route('index') }}">
                     <x-application-logo class="block h-9 w-auto fill-current text-gray-80"  width="70px" height="70px" />
                 </a>&nbsp;&nbsp;&nbsp;
-                <div class="text-4xl text-gray-500">
-                    <a href="{{ route('index') }}">kiptumtime</a>
+                <div class="text-4xl text-white">
+                    <a href="{{ route('index') }}">Kiptumtime</a>
                 </div>
             </div>
 
             <!-- Navigation Links -->
             <div class="hidden space-x-6 lg:space-x-8 sm:-my-px sm:ms-10 md:flex">
-                <x-nav-link :href="route('index')" :active="request()->routeIs('index')" class="text-lg lg:text-xl text-gray-500">
+                <x-nav-link :href="route('index')" :active="request()->routeIs('index')" class="text-lg lg:text-xl">
                     {{ __('messages.home') }}
                 </x-nav-link>
-                <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-500">
+
+                <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')" class="text-lg lg:text-xl">
                     {{ __('messages.results') }}
                 </x-nav-link>
-                <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.index')" class="text-lg lg:text-xl text-gray-500">
+
+                <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.upload-url.create')" class="text-lg lg:text-xl">
                     {{ __('messages.results_upload') }}
                 </x-nav-link>
                 <x-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('how_it_works.index')" class="text-lg lg:text-xl text-gray-500">
                     {{ __('messages.how_it_works') }}
                 </x-nav-link>
-                <x-nav-link :href="'https://forum.kiptumtime.com'" class="text-lg lg:text-xl text-gray-500" target="_blank">
-                    {{ __('messages.forum') }}
-                </x-nav-link>
+
                 <x-nav-link :href="route('about')"  class="text-lg lg:text-xl text-gray-500">
                     {{ __('messages.about') }}
                 </x-nav-link>
@@ -45,8 +45,7 @@
                                     <div>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
                                 </button>
                             @else
-                                <a class="border-solid border border-red-600 hover:bg-red-700 hover:text-white text-red-700 py-2 px-4 rounded" href="{{ route('login') }}"> {{ __('Login') }}</a>
-                            @endif
+                            <a class="w-[150px] h-auto inline-block" href="auth/strava"><img class="img-fluid" src="http://localhost:82/strava-login-icon-sm.png" /></a>                          @endif
                         </x-slot>
 
                         <x-slot name="content">
