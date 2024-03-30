@@ -1,16 +1,16 @@
 
-<nav x-data="{ open: false }" class="border-b-[20px] border-white bg-black py-4">
+<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[20px] border-white bg-black py-4">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto sm:px-6 lg:px-8">
 
         <div class="flex justify-between h-16">
 
             <!-- Logo -->
-            <div class="shrink-0 flex items-center">
-                <a href="{{ route('index') }}">
-                    <x-application-logo class="block h-9 w-auto fill-current text-gray-80"  width="70px" height="70px" />
-                </a>&nbsp;&nbsp;&nbsp;
-                <div class="text-4xl text-white">
+            <div class="w-[17rem] sm:w-72 shrink-0 flex items-center">
+                <a class="mr-2" href="{{ route('index') }}">
+                    <img class="w-full h-auto" src="kelvin.png" />
+                </a>
+                <div class="text-4xl text-white font-black">
                     <a href="{{ route('index') }}">Kiptumtime</a>
                 </div>
             </div>
@@ -71,9 +71,9 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="flex items-center md:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center  rounded-md text-white hover:white hover:bg-gray-800 focus:outline-none focus:bg-gray-800 focus:text-white transition duration-150 ease-in-out bg-gray-800 mr-1">
-                    <svg class="h-10 w-8" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+            <div class="flex items-center md:hidden mr-3">
+                <button @click="open = ! open" class="inline-flex items-center justify-center  rounded-md text-black hover:text-[#bc0000ff] focus:outline-none focus:text-[#bc0000ff] transition duration-150 ease-in-out bg-white">
+                    <svg class="w-12 h-12" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>

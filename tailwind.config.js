@@ -16,7 +16,7 @@ export default {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
             screens: {
-                'xs': '475px',
+                'xs': '360px',
                 ...defaultTheme.screens,
               },
 
@@ -29,12 +29,12 @@ export default {
             addBase({
                 '.p-standard p': {
                     'margin-top': config('theme.spacing.3'),
-                    'font-size': config('theme.fontSize.xl'),
+                    'fon-size': config('theme.fontSize.xl'),
 
                 },
                 'h2' : {
                     'font-size': config('theme.fontSize.2xl'), // odpovídá třídě 'text-2xl'
-                    'color': config('theme.colors.orange.500'), // odpovídá třídě 'text-orange-500'
+                    'color': config('theme.colors.white'), // odpovídá třídě 'text-orange-500'
                     'text-decoration': 'underline', // odpovídá třídě 'underline'
                     'margin-top': config('theme.spacing.10'), // odpovídá třídě 'mt-10'
                     // další styly..

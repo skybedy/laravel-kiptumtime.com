@@ -1,6 +1,6 @@
 @section('title', 'About')
 <x-app-layout>
-   <div class="py-6 px-5 md:py-12">
+   <div class="flex-grow py-6 px-5 md:py-12">
      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <h2 class="text-2xl text-orange-500 underline mt-10">About author</h2>
         <p class="text-xl mt-3">
