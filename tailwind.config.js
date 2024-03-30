@@ -35,7 +35,7 @@ export default {
                 '.standard-content p': {
                     'margin-top': config('theme.spacing.3'),
                     'fon-size': config('theme.fontSize.xl'),
-                    'font-weight': 'bold', // odpovídá třídě 'font-bold'
+                    'font-weight': 'bol', // odpovídá třídě 'font-bold'
                     'color': config('theme.colors.white'),
                     'border-left': '1px solid white',
                     'border-right': '1px solid white',

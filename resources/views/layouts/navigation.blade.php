@@ -1,51 +1,54 @@
 
-<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[20px] border-white bg-black py-4 md:py-6 lg:py-10">
+<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-black py-4 md:py-6 lg:py-4">
     <!-- Primary Navigation Menu -->
-    <div class="mx-auto sm:px-6 lg:px-8">
+    <div class="mx-auto">
 
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between items-center bg-slate-5000">
 
             <!-- Logo -->
-            <div class="w-[17rem] md:w-72 lg:w-80 shrink-0 flex items-center">
+            <div class="w-[17rem] md:w-72 xl:w-80 shrink-0 flex items-center">
                 <a class="mr-2" href="{{ route('index') }}">
                     <img class="w-full h-auto" src="kelvin.png" />
                 </a>
                 <div class="text-4xl text-white font-black">
-                    <a href="{{ route('index') }}">Kiptumtime</a>
+                    <a href="{{ route('index') }}">KiptumTime</a>
                 </div>
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden space-x-6 lg:space-x-8 sm:-my-px sm:ms-10 lg:flex">
-                <x-nav-link :href="route('index')" :active="request()->routeIs('index')" class="text-lg lg:text-xl">
+            <div class="hidden lg:flex space-x-2 sm:-my-px sm:ms-10">
+                <x-nav-link :href="route('index')" :active="request()->routeIs('index')" >
                     {{ __('messages.home') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')" class="text-lg lg:text-xl">
+                <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')">
                     {{ __('messages.results') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.upload-url.create')" class="text-lg lg:text-xl">
+                <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.upload-url.create')" >
                     {{ __('messages.results_upload') }}
                 </x-nav-link>
-                <x-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('how_it_works.index')" class="text-lg lg:text-xl text-gray-500">
+                <x-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('how_it_works.index')">
                     {{ __('messages.how_it_works') }}
                 </x-nav-link>
 
-                <x-nav-link :href="route('about')"  class="text-lg lg:text-xl text-gray-500">
+                <x-nav-link :href="route('about')">
                     {{ __('messages.about') }}
                 </x-nav-link>
 
                 <!-- Settings Dropdown -->
-                <div class="hidden md:flex sm:items-center sm:ms-6">
-                    <x-dropdown align="right" width="48">
+                <div class="hidden md:flex pr-2 bg-slate-3000">
+
+                    <x-dropdown>
                         <x-slot name="trigger">
                             @auth
-                                <button class="inline-flex items-center px-3 pt-[0.2rem] border border-transparent text-base lg:text-lg leading-4 font-medium rounded-md text-blue-600  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                    <div>{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
+
+                                <button class="inline-flex items-center px-3 pt-[0.2rem] border border-transparent text-base lg:text-lg leading-4 font-medium rounded-md text-orange-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                doplnit
                                 </button>
-                            @else
-                            <a class="w-[150px] h-auto inline-block" href="auth/strava"><img class="img-fluid" src="http://localhost:82/strava-login-icon-sm.png" /></a>                          @endif
+                                @else
+                                    <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex pt-[0.4rem] items-center bg-slate-5000" href="auth/strava"><img class="img-fluid" src="http://localhost:82/strava-login-icon.png" /></a>
+                                @endif
                         </x-slot>
 
                         <x-slot name="content">

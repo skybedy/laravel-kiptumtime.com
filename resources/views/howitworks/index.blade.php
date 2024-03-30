@@ -1,21 +1,21 @@
 @section('title', 'How it works')
 <x-app-layout>
-    <div class="bg-[#bc0000ff] sm:py-10">
+    <div class="bg-red-kena sm:py-10">
 
 
 
-                <div class="standard-content lg:border border-white rounded-md  max-w-7xl mx-auto px-3 sm:px-10">
+                <div class="standard-content lg:border border-white rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl mx-auto px-3 sm:px-10 lg:py-5">
 
                     <h2 class="text-2xl sm:text-3xl md:text-4xl">{{ __('messages.headline_1') }}</h2>
 
-                    <p class="text-base sm:text-lg md:text-xl px-2 sm:px-4">{{ __('messages.trans_1') }}
+                    <p class="text-base sm:text-lg md:text-xl lg:text-2xl px-2 sm:px-4 md:px-5">{{ __('messages.trans_1') }}
 
 
                         <br>{!! __('messages.trans_2') !!}</p>
 
                     <h2 class="text-2xl sm:text-3xl md:text-4xl">{{ __('messages.headline_8') }}</h2>
 
-                    <p class="text-base sm:text-lg md:text-xl px-2 sm:px-4">{{ __('messages.trans_3') }}</p>
+                    <p class="text-base sm:text-lg md:text-xl px-2 sm:px-4 md:px-5">{{ __('messages.trans_3') }}</p>
 
 
 
