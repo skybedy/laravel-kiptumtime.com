@@ -1,12 +1,12 @@
 
-<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[20px] border-white bg-black py-4">
+<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[20px] border-white bg-black py-4 md:py-6 lg:py-10">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto sm:px-6 lg:px-8">
 
         <div class="flex justify-between h-16">
 
             <!-- Logo -->
-            <div class="w-[17rem] sm:w-72 shrink-0 flex items-center">
+            <div class="w-[17rem] md:w-72 lg:w-80 shrink-0 flex items-center">
                 <a class="mr-2" href="{{ route('index') }}">
                     <img class="w-full h-auto" src="kelvin.png" />
                 </a>
@@ -16,7 +16,7 @@
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden space-x-6 lg:space-x-8 sm:-my-px sm:ms-10 md:flex">
+            <div class="hidden space-x-6 lg:space-x-8 sm:-my-px sm:ms-10 lg:flex">
                 <x-nav-link :href="route('index')" :active="request()->routeIs('index')" class="text-lg lg:text-xl">
                     {{ __('messages.home') }}
                 </x-nav-link>
@@ -71,7 +71,7 @@
             </div>
 
             <!-- Hamburger -->
-            <div class="flex items-center md:hidden mr-3">
+            <div class="flex items-center lg:hidden mr-3">
                 <button @click="open = ! open" class="inline-flex items-center justify-center  rounded-md text-black hover:text-[#bc0000ff] focus:outline-none focus:text-[#bc0000ff] transition duration-150 ease-in-out bg-white">
                     <svg class="w-12 h-12" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />

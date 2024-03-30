@@ -1,13 +1,25 @@
 @section('title', 'How it works')
 <x-app-layout>
-    <div class="bg-slate-300">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-slate-800">
-            <div class="bg- overflow-hidden shadow-sm sm:rounded-lg px-3 sm:p-10 bg-slate-900">
-                  <div class="p-standard md:p-6 text-white border border-white rounded-md">
-                    <h2 class="text-[#bc0000ff] text-center no-underline text-3xl sm:text-5xl font-black bg-white sm:mb-5">{{ __('messages.headline_1') }}</h2>
-                    <p class="text-base sm:text-2xl font-black border-x border-white px-2 sm:px-4">{{ __('messages.trans_1') }}
-                    <br>{!! __('messages.trans_2') !!}</p>
-                    <p>{{ __('messages.trans_3') }}</p>
+    <div class="bg-[#bc0000ff] sm:py-10">
+
+
+
+                <div class="standard-content lg:border border-white rounded-md  max-w-7xl mx-auto px-3 sm:px-10">
+
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl">{{ __('messages.headline_1') }}</h2>
+
+                    <p class="text-base sm:text-lg md:text-xl px-2 sm:px-4">{{ __('messages.trans_1') }}
+
+
+                        <br>{!! __('messages.trans_2') !!}</p>
+
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl">{{ __('messages.headline_8') }}</h2>
+
+                    <p class="text-base sm:text-lg md:text-xl px-2 sm:px-4">{{ __('messages.trans_3') }}</p>
+
+
+
+
                     <h2>{{ __('messages.headline_2') }}</h2>
                     <p>{{ __('messages.trans_6') }}</p>
                     <h2>{{ __('messages.headline_3') }}</h2>
@@ -69,7 +81,7 @@
 
 
 
-            </div>
+
         </div>
     </div>
 
