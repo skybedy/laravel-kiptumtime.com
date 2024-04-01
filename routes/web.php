@@ -84,4 +84,10 @@ Route::get('testmail', function () {
     Mail::to('skybedy@gmail.com')->send(new TestEmail());
    });
 
+Route::get('test', function () {
+    return view('test');
+   });
+
+
+
 require __DIR__.'/auth.php';

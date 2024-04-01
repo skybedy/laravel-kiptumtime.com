@@ -3,8 +3,8 @@
     <x-alert />
     <x-info />
 
-    <div class="bg-red-600 sm:py-10">
-        <div class="lg:border border-white rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl mx-auto px-3 sm:px-10 lg:py-5">
+    <div class="grow py-10">
+        <div class="lg:border border-white rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl px-3 sm:px-10 lg:py-5 mx-auto">
             @if(!$connectingStrava)
 
                 <div class="text-white font-black text-center text-[0.7rem] sm:text-sm xl:text-2xl underline">
@@ -29,11 +29,11 @@
             @endif
 
             <x-h2 style="style-1">Insert the link from Strava following the instructions below</x-h2>
-            <form class="border border-gray-900 rounded-md  sm:p-4 xl:p-6 mt-10 bg-green-700" action="{{ route('event.upload.store.url',$eventId) }}" method="post" enctype="multipart/form-data">
+            <form class="border border-gray-900 rounded-md  p-3 sm:p-4 md:p-6 mt-10 bg-green-700" action="{{ route('event.upload.store.url',$eventId) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="flex space-x-2">
-                    <input type="text" name="strava_url" class="text-white text-xl w-2/3 sm:w-full border border-gray-900  rounded-md py-[20px]" placeholder=" https://www.strava.com/activities/12345678">
-                    <button type="submit" class="flex items-center justify-center bg-gray-900 hover:bg-gray-200 text-white font-bold py-2 px-1 rounded-md w-1/3 sm:w-1/5 text-xs sm:text-lg">
+                    <input type="text" name="strava_url" class="text-white text-[0.7rem] sm:text-xl xl:text-2xl w-2/3 sm:w-full border border-gray-900  rounded-md py-[20px]" placeholder="www.strava.com/activities/12345678">
+                    <button type="submit" class="flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-1 rounded-md w-1/3 sm:w-1/5 text-xs sm:text-sm md:text-lg">
                         Upload link
                     </button>
                 </div>

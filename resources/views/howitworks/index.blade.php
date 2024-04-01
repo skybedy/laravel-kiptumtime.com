@@ -1,7 +1,7 @@
 @section('title', 'How it works')
 <x-app-layout>
-    <div class="bg-red-600 sm:py-10">
-        <div class="lg:border border-white rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl mx-auto px-3 sm:px-10 lg:py-5">
+    <div class="grow py-10">
+        <div class="lg:border border-white rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl px-3 sm:px-10 lg:py-5 mx-auto">
             <x-h2 style="style-1">{{ __('messages.headline_1') }}</x-h2>
             <x-p style="style-1">{{ __('messages.trans_1') }}<br>{!! __('messages.trans_2') !!}</x-p>
             <x-h2 style="style-1">{{ __('messages.headline_8') }}</x-h2>

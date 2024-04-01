@@ -63,7 +63,7 @@ input[type=file]::file-selector-button:hover {
  </style>
 </head>
     <body class="font-sans antialiased">
-        <div class="flex flex-col justify-between h-screen">
+        <div class="flex flex-col justify-between min-h-screen bg-red-600">
             @include('layouts.navigation')
             <!-- Page Content -->
 
