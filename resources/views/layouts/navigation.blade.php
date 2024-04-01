@@ -1,5 +1,5 @@
 
-<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-black py-4 md:py-6 lg:py-4">
+<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-gray-900 py-4 md:py-6 lg:py-4">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto">
 

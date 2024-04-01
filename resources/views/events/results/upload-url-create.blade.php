@@ -27,44 +27,41 @@
                     </svg>
                 </a>
             @endif
-            <div class="lg:p-6 text-gray-900 bg-rd-500">
-                <div class="lg:mt-10">
-                    <x-h2 style="style-1">Insert the link from Strava following the instructions below</x-h2>
 
+            <x-h2 style="style-1">Insert the link from Strava following the instructions below</x-h2>
+            <form class="border border-gray-900 rounded-md  sm:p-4 xl:p-6 mt-10 bg-green-700" action="{{ route('event.upload.store.url',$eventId) }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="flex space-x-2">
+                    <input type="text" name="strava_url" class="text-white text-xl w-2/3 sm:w-full border border-gray-900  rounded-md py-[20px]" placeholder=" https://www.strava.com/activities/12345678">
+                    <button type="submit" class="flex items-center justify-center bg-gray-900 hover:bg-gray-200 text-white font-bold py-2 px-1 rounded-md w-1/3 sm:w-1/5 text-xs sm:text-lg">
+                        Upload link
+                    </button>
+                </div>
+            </form>
 
-                    <form class="border border-white bg-red-700 rounded-md p-2 sm:p-4" action="{{ route('event.upload.store.url',$eventId) }}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="flex space-x-1">
-                                <input type="text" name="strava_url" class="text-white w-2/3 sm:w-full border border-white bg-red-600  rounded-md py-[9px]">
-
-                                <button type="submit" class="flex items-center justify-center bg-white hover:bg-gray-200 text-black font-bold py-2 px-1 rounded-md w-1/3 sm:w-1/5 text-xs sm:text-lg">
-                                    Upload link
-                                </button>
-                            </div>
-                        </form>
-
-                        <div class="mt-10">
-                            <x-h2 style="style-1">Examples of possible links</x-h2>
-
-                            <div class="text-sm sm:text-xl text-orange-700 font-black mt-5 sm:mt-10">1) https://www.strava.com/activities/12345678</div>
-                            <p class="mt-2">This is the link that you copy from the browser address bar (Chrome,Firefox,Edge, etc.), regardless of whether you are on a desktop/laptop or mobile/tablet and the page that has the run you want to upload to the VirtualRun results <br>
-The number after the last slash "123456789" will of course be replaced by your activity number in real life. </p>
-                            <div class="mt-2"><img class="img-fluid border" src="/strava-url-browser-example.png" /></div>
-                            <h3 class="text-sm sm:text-xl text-orange-700 font-black mt-5 sm:mt-10">To give you a better idea, this video is available</h3>
-                            <iframe class="mt-1" width="560" height="315" src="https://www.youtube.com/embed/oGJuW4fvcc4?si=Q-KRLZGGAAukpsoG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-
-                            <hr class="mt-10">
-                            <div class="text-orange-700 text-sm sm:text-xl font-black mt-10">2) https://strava.app.link/abc123</div>
-                            <p class="mt-2">Unlike the first way, where the link is copied from the browser's address bar, here it is copied from the mobile application via sharing to the clipboard, which then creates a link in the form shown above.<br>
-Due to the fact that the development of applications not only from Strava is fast, the method of sharing to clipboard may vary depending on the version of the application, operating system, etc.<br> Here is a 2-step example for Android, for iOS it may differ in some details.<br>
-Of course, also here the characters after the last slash "abc123" will be replaced by your activity characters in real life.</p>
-                            </p>
-                            <div class="mt-2"><img class="img-fluid border" src="/strava-url-app-example.png" /></div>
-                            <h3 class="text-sm sm:text-xl text-orange-700 font-black mt-5 sm:mt-10">For this way as well is availbale the video</h3>
-                            <iframe class="mt-1" width="560" height="315" src="https://www.youtube.com/embed/qttfodxPdl4?si=2hECgGrmuE0M6XDf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </div>
-                    </div>
+            <div class="mt-10">
+                <x-h2 style="style-1">Examples of possible links</x-h2>
+                <x-p style="style-1">
+                    <span class="underline">1) https://www.strava.com/activities/12345678</span><br><br>
+                    This is the link that you copy from the browser address bar (Chrome,Firefox,Edge, etc.), regardless of whether you are on a desktop/laptop or mobile/tablet and the page that has the run you want to upload to the VirtualRun results <br>The number after the last slash "123456789" will of course be replaced by your activity number in real life.
+                </x-p>
+                <div class="border-l border-r border-white px-2 sm:px-4 md:px-5 pt-2">
+                    <div class="mt-5 w-[560px] h-auto"><img class="img-fluid border border-red-900" src="/strava-url-browser-example.png" /></div>
+                    <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl text-white mt-10">To give you a better idea, this video is available</h3>
+                    <iframe class="mt-1 border border-red-900" width="560" height="315" src="https://www.youtube.com/embed/oGJuW4fvcc4?si=Q-KRLZGGAAukpsoG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <hr class="my-10">
+                <x-p style="style-1">
+                    <span class="underline">2) https://strava.app.link/abc123</span><br><br>
+                    Unlike the first way, where the link is copied from the browser's address bar, here it is copied from the mobile application via sharing to the clipboard, which then creates a link in the form shown above.<br>
+                    Due to the fact that the development of applications not only from Strava is fast, the method of sharing to clipboard may vary depending on the version of the application, operating system, etc.<br> Here is a 2-step example for Android, for iOS it may differ in some details.<br>
+                    Of course, also here the characters after the last slash "abc123" will be replaced by your activity characters in real life.
+                </x-p>
+                <div class="border-l border-r border-white px-2 sm:px-4 md:px-5 pt-2">
+                    <div class="mt-5 w-[560px] h-auto border border-white"><img class="img-fluid border border-black" src="/strava-url-app-example.png" /></div>
+                    <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl text-white mt-10">For this way is availbale the video as well</h3>
+                    <iframe class="mt-1" width="560" height="315" src="https://www.youtube.com/embed/qttfodxPdl4?si=2hECgGrmuE0M6XDf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
