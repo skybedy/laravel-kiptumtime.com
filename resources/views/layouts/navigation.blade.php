@@ -16,7 +16,7 @@
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden lg:flex space-x-2 sm:-my-px sm:ms-10">
+            <div class="hidden lg:flex space-x-2 xl:space-x-8 2xl:space-x-10 sm:-my-px sm:ms-10">
                 <x-nav-link :href="route('index')" :active="request()->routeIs('index')" >
                     {{ __('messages.home') }}
                 </x-nav-link>
