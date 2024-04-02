@@ -26,7 +26,7 @@
                                         $best_time = $result->best_finish_time_sec;
                                     @endphp
                                 @endif
-                                <tr class="odd:bg-red-700 even:bg-red-600 border border-white" id="result_{{ $result->id }}">
+                                <tr class="odd:bg-red-800 even:bg-red-700 border border-white" id="result_{{ $result->id }}">
                                     <td class="borde border-white text-center px-2 py-1">{{ $loop->iteration }}</td>
                                     <td class="borde border-white px-2">
                                         @if($result->count > 1)
@@ -70,7 +70,7 @@
                                         $best_time = $result->best_finish_time_sec;
                                     @endphp
                                 @endif
-                                <tr class="odd:bg-red-700 even:bg-red-600 border border-white" id="result_{{ $result->id }}">
+                                <tr class="odd:bg-red-800 even:bg-red-700 border border-white" id="result_{{ $result->id }}">
                                     <td class="border border-white text-center py-1">{{ $loop->iteration }}</td>
                                     <td class="border border-white px-1">
                                         @if($result->count > 1)

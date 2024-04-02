@@ -42,13 +42,13 @@
             <div class="mt-10">
                 <x-h2 style="style-1">Examples of possible links</x-h2>
                 <x-p style="style-1">
-                    <span class="underline">1) https://www.strava.com/activities/12345678</span><br><br>
+                    <span class="underline">1) www.strava.com/activities/12345678</span><br><br>
                     This is the link that you copy from the browser address bar (Chrome,Firefox,Edge, etc.), regardless of whether you are on a desktop/laptop or mobile/tablet and the page that has the run you want to upload to the VirtualRun results <br>The number after the last slash "123456789" will of course be replaced by your activity number in real life.
                 </x-p>
                 <div class="border-l border-r border-white px-2 sm:px-4 md:px-5 pt-2">
-                    <div class="mt-5 w-[560px] h-auto"><img class="img-fluid border border-red-900" src="/strava-url-browser-example.png" /></div>
+                    <div class="mt-5 sm:w-[500px] md:w-[560px] sm:h-auto"><img class="img-fluid border border-red-900" src="/strava-url-browser-example.png" /></div>
                     <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl text-white mt-10">To give you a better idea, this video is available</h3>
-                    <iframe class="mt-1 border border-red-900" width="560" height="315" src="https://www.youtube.com/embed/oGJuW4fvcc4?si=Q-KRLZGGAAukpsoG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="mt-1 h-[200px] sm:w-[500px] md:w-[560px] sm:h-[315px]"  src="https://www.youtube.com/embed/oGJuW4fvcc4?si=Q-KRLZGGAAukpsoG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <hr class="my-10">
                 <x-p style="style-1">
@@ -58,9 +58,9 @@
                     Of course, also here the characters after the last slash "abc123" will be replaced by your activity characters in real life.
                 </x-p>
                 <div class="border-l border-r border-white px-2 sm:px-4 md:px-5 pt-2">
-                    <div class="mt-5 w-[560px] h-auto border border-white"><img class="img-fluid border border-black" src="/strava-url-app-example.png" /></div>
+                    <div class="mt-5 sm:w-[500px] md:w-[560px] sm:h-auto border border-white"><img class="img-fluid border border-black" src="/strava-url-app-example.png" /></div>
                     <h3 class="text-base sm:text-lg md:text-xl lg:text-2xl text-white mt-10">For this way is availbale the video as well</h3>
-                    <iframe class="mt-1" width="560" height="315" src="https://www.youtube.com/embed/qttfodxPdl4?si=2hECgGrmuE0M6XDf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="mt-1 h-[200px] sm:w-[500px] md:w-[560px] sm:h-[315px]"  src="https://www.youtube.com/embed/qttfodxPdl4?si=2hECgGrmuE0M6XDf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

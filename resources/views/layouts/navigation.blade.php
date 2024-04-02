@@ -43,11 +43,11 @@
                         <x-slot name="trigger">
                             @auth
 
-                                <button class="inline-flex items-center px-3 pt-[0.2rem] border border-transparent text-lg xl:text-xl 2xl:text-2xl  leading-4 font-medium rounded-md text-orange-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                <button class="inline-flex items-center px-3 pt-[0.4rem] xl:pt-[0.2rem] border border-transparent text-lg xl:text-xl 2xl:text-2xl  leading-4 font-black rounded-md text-orange-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                                     <div>{{ Auth::user()->firstname }}</div>                                
                                 </button>
                                 @else
-                                    <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex pt-[0.4rem] items-center bg-slate-5000" href="auth/strava"><img class="img-fluid" src="http://localhost:82/strava-login-icon.png" /></a>
+                                    <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex pt-[0.4rem] items-center bg-slate-5000" href="auth/strava"><img class="img-fluid" src="/strava-login-icon.png" /></a>
                                 @endif
                         </x-slot>
 
