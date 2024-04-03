@@ -5,7 +5,7 @@
     </form>
 
 
-        <p class="mt-1 text-sm md:text-base lg:text-xl text-white">
+        <h3 class="mt-1 text-xs md:text-xl lg:text-2xl text-white text-center">
             {{ __("If necessary, edit your profile information") }}
         </p>
         <form method="post" action="{{ route('profile.update') }}" class="mt-1 space-y-3 border border-gray-900 rounded-md  p-3 sm:p-4 md:p-4  bg-green-700">
@@ -14,19 +14,19 @@
 
             <div>
                 <x-input-label for="firstname" :value="__('Name')" />
-                <x-text-input id="firstname" name="firstname" type="text" class="mt-1 block w-full border-gray-900 shadow-xl" :value="old('firstname', $user->firstname)" required autofocus autocomplete="firstname" />
+                <x-text-input id="firstname" name="firstname" type="text" class="mt-1 block w-full border-gray-900 shadow-xl text-black" :value="old('firstname', $user->firstname)" required autofocus autocomplete="firstname" />
                 <x-input-error class="mt-2" :messages="$errors->get('firstname')" />
             </div>
 
             <div>
                 <x-input-label for="lastname" :value="__('Lastname')" />
-                <x-text-input id="lastname" name="lastname" type="text" class="mt-1 block w-full border-gray-900 shadow-xl" :value="old('lastname', $user->lastname)" required autofocus autocomplete="lastname" />
+                <x-text-input id="lastname" name="lastname" type="text" class="mt-1 block w-full border-gray-900 shadow-xl text-black" :value="old('lastname', $user->lastname)" required autofocus autocomplete="lastname" />
                 <x-input-error class="mt-2" :messages="$errors->get('lastname')" />
             </div>
 
             <div>
                 <x-input-label for="email" :value="__('Email')" />
-                <x-text-input id="email" name="email" type="email" class="mt-1 block w-full border-gray-900 shadow-xl" :value="old('email', $user->email)" required autocomplete="username" disabled/>
+                <x-text-input id="email" name="email" type="email" class="mt-1 block w-full border-gray-900 shadow-xl text-black" :value="old('email', $user->email)" required autocomplete="username" disabled/>
                 <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
                 @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())

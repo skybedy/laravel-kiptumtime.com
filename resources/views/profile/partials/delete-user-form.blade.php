@@ -1,15 +1,15 @@
-s<section class="space-y-6">
+<section class="space-y-6">
     <header>
-        <h2 class="text-lg font-medium text-gray-900">
+        <h3 class="mt-1 text-md md:text-xl lg:text-2xl text-white">
             {{ __('Remove account') }}
         </h2>
 
-        <p class="mt-1 text-sm text-gray-600">
+        <p class="mt-1 text-sm sm:text-lg text-white">
             {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
         </p>
     </header>
 
-    <x-danger-button
+    <x-danger-button class="bg-gray-900 hover:bg-gray-800 mt-4 text-xl px-2 py-3"
         x-data=""
         x-on:click.prevent="$dispatch('open-modal', 'confirm-user-deletion')"
     >{{ __('Delete Account') }}</x-danger-button>
@@ -23,7 +23,7 @@ s<section class="space-y-6">
                 {{ __('Are you sure you want to delete your account?') }}
             </h2>
 
-            <p class="mt-1 text-sm text-gray-600">
+            <p class="mt-1 text-sm text-white">
                 {{ __('Once your account is deleted, all of its resources and all results will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
             </p>
 
@@ -46,7 +46,7 @@ s<section class="space-y-6">
                     {{ __('Cancel') }}
                 </x-secondary-button>
 
-                <x-danger-button class="ms-3">
+                <x-danger-button class="ms-3 bg-gray-900">
                     {{ __('Delete Account') }}
                 </x-danger-button>
             </div>
