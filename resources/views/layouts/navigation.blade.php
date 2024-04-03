@@ -44,7 +44,7 @@
                             @auth
 
                                 <button class="inline-flex items-center px-3 pt-[0.4rem] xl:pt-[0.2rem] border border-transparent text-lg xl:text-xl 2xl:text-2xl  leading-4 font-black rounded-md text-orange-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                    <div>{{ Auth::user()->firstname }}</div>                                
+                                    <div>{{ Auth::user()->firstname }}</div>
                                 </button>
                                 @else
                                     <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex pt-[0.4rem] items-center bg-slate-5000" href="auth/strava"><img class="img-fluid" src="/strava-login-icon.png" /></a>
@@ -88,7 +88,7 @@
     </div>
 
     <!-- Responsive Navigation Menu -->
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+    <div :class="{'block': open, 'hidden': ! open}" class="hidden lg:hidden">
 
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
@@ -103,10 +103,7 @@
             <x-responsive-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('index')">
                  {{ __('messages.how_it_works') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="'https://forum.kiptumtime.com'"  target="_blank">
-                {{ __('messages.forum') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="'https://forum.kiptumtime.com'"  target="_blank">
+            <x-responsive-nav-link :href="route('about')">
                 {{ __('messages.about') }}
             </x-responsive-nav-link>
         </div>

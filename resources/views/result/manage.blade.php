@@ -2,42 +2,39 @@
 @section('title', 'Results management')
 <x-app-layout>
 
-    <div class="py-3">
-        <div class="max-w-7xl mx-auto sm:px-6 }lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mt-5">
-                    @if (session('status'))
+    <div class="grow py-10">
+        <div class="lg:border border-white rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl px-3 sm:px-10 lg:py-5 mx-auto">
+
+
+            @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    <div class="overflow-auto">
-                        <table id="result_table" class="table table-auto border-collapse w-full mt-5 text-[0.6rem] md:text-base">
-                            <tr class="text-center">
-                                <td></td>
-                                <td class="bg-gray-600 text-white border border-gray-900 font-black" colspan="2">Mile</td>
-                                <td class="bg-gray-600 text-white border border-gray-900 font-black" colspan="2">Km</td>
-                            </tr>
+
+                        <table id="result_table" class="table table-auto border border-white border-collapse  w-full mt-5 text-[0.6rem] md:text-base text-white">
 
                         @foreach ($results as $result)
                             @if (count($result->results) > 0)
-                                <tr class="text-center">
-                                    <th class="border-none">Date</th>
-                                    <th class="border-none px-2">Pace</th>
-                                    <th class="border-none px-2">Distance</th>
-                                    <th class="border-none px-2">Pace</th>
-                                    <th class="border-none px-2">Distance</th>
+                                <tr class="text-center bg-gray-900">
+                                    <th class="py-2">Date</th>
+                                    <th class="px-2">Pace/Mi</th>
+                                    <th class="px-2">Dist/Mi</th>
+                                    <th class="px-2">Pace/Km</th>
+                                    <th class="px-2">Dist/km</th>
+                                    <th class="px-2"></th>
                                 </tr>
 
                                 @foreach ($result->results as $result)
-                                    <tr class="text-center odd:bg-gray-100 even:bg-white">
-                                        <td class="border">{{ $result['finish_time_date'] }}</td>
-                                        <td class="border">{{ $result['pace_mile'] }}</td>
-                                        <td class="border">{{ $result['finish_distance_mile'] }}</td>
-                                        <td class="border">{{ $result['pace_km'] }}</td>
-                                        <td class="border">{{ $result['finish_distance_km'] }}</td>
-                                        <td class="border py-1">
-                                            <a class="text-white bg-red-500 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded  text-[0.6rem] md:text-sm px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="{{ route('result.delete',['resultId' => $result['id']]) }}">Delete result</a>
+                                    <tr class="text-center odd:bg-red-800 even:bg-red-700 border border-white">
+                                        <td class="py-2">{{ $result['finish_time_date'] }}</td>
+                                        <td>{{ $result['pace_mile'] }}</td>
+                                        <td>{{ $result['finish_distance_mile'] }}</td>
+                                        <td>{{ $result['pace_km'] }}</td>
+                                        <td>{{ $result['finish_distance_km'] }}</td>
+                                        <td class="py-1">
+                                            <a class="text-white bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:ring-blue-300 font-medium rounded  text-[0.6rem] md:text-sm px-3 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="{{ route('result.delete',['resultId' => $result['id']]) }}">Delete result</a>
                                         </td>
                                     </tr>
 
@@ -52,7 +49,6 @@
 
 
 
-            </div>
         </div>
     </div>
 </x-app-layout>
