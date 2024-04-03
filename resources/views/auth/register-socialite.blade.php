@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route('register-socialite') }}">
             @csrf
              <x-text-input  id="provider_name" type="hidden" name="provider_name" :value="$provider" />
-             <x-text-input  id="provider_id" type="hidden" name="provider_id" :value="$id" />
+             <x-text-input  id="providemr_id" type="hidden" name="provider_id" :value="$id" />
             <div class="mt-4">
                 <x-input-label for="firstname" :value="__('Firstname')" />
                 <x-text-input id="firstname" class="mt-1 block w-full" type="text" name="firstname" :value="$firstname" required autofocus autocomplete="firstname" />
@@ -25,6 +25,7 @@
                 <x-input-label for="country" value="Country" />
                 <select id="country" name="country" class="border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm mt-1 block w-full" required>
                     <option value="" selected disabled></option>
+                    <option value="N/A" class="text-red-600">I don't want to give the country</option>
                     @foreach ($countries as $key => $country)
                         <option value="{{ $key }}">{{ $country }}</option>
                     @endforeach
