@@ -26,7 +26,7 @@
             <div class="mt-5 border-l border-r border-white px-5">
                     @include('profile.partials.update-profile-information-form')
             </div>
-
+            <hr class=m-5>
             <div class="mt-5 border-l border-r border-white px-5">
                     @include('profile.partials.update-password-form')
             </div>
