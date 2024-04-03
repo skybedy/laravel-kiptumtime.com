@@ -1,4 +1,3 @@
-
 <nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-gray-900 py-4 md:py-6 lg:py-4">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto">
@@ -94,16 +93,16 @@
             <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
                  {{ __('messages.home') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('index')">
+            <x-responsive-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')">
                  {{ __('messages.results') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('index')">
+            <x-responsive-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.upload-url.create')">
                 {{ __('messages.results_upload') }}
              </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('index')">
+            <x-responsive-nav-link :href="route('how_it_works.index')" :active="request()->routeIs('how_it_works.index')">
                  {{ __('messages.how_it_works') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('about')">
+            <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                 {{ __('messages.about') }}
             </x-responsive-nav-link>
         </div>
@@ -111,19 +110,19 @@
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
 
-            <div class="px-4">
+            <div class="px-3">
                 @auth
-                    <div class="font-medium text-base text-orange-500">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
+                    <div class="font-medium text-lg text-orange-500">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
                 @else
-                    <a class="border-solid border border-red-600 hover:bg-red-700 hover:text-white text-red-700 py-2 px-4 rounded" href="{{ route('login') }}"> {{ __('Login') }}</a>
+                    <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex" href="auth/strava"><img class="img-fluid" src="/strava-login-icon.png" /></a>
                 @endif
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
+                <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
                     {{ __('Profil') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('result.manage')">
+                <x-responsive-nav-link :href="route('result.manage')" :active="request()->routeIs('result.manage')">
                      {{ __('Result manage') }}
                 </x-responsive-nav-link>
 
@@ -133,7 +132,7 @@
 
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+                            this.closest('form').submit();">
                          {{ __('Logout') }}
                     </x-responsive-nav-link>
                 </form>
