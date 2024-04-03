@@ -40,15 +40,15 @@
                 <div class="hidden md:flex pr-2 bg-slate-3000">
 
                     <x-dropdown>
+
                         <x-slot name="trigger">
                             @auth
-
-                                <button class="inline-flex items-center px-3 pt-[0.4rem] xl:pt-[0.2rem] border border-transparent text-lg xl:text-xl 2xl:text-2xl  leading-4 font-black rounded-md text-orange-500  hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                <button class="inline-flex items-center px-3 pt-[0.4rem] xl:pt-[0.2rem] border border-transparent text-lg xl:text-xl 2xl:text-2xl  leading-4 font-black rounded-md text-orange-500  hover:text-orange-300 focus:outline-none transition ease-in-out duration-150">
                                     <div>{{ Auth::user()->firstname }}</div>
                                 </button>
-                                @else
-                                    <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex pt-[0.4rem] items-center bg-slate-5000" href="auth/strava"><img class="img-fluid" src="/strava-login-icon.png" /></a>
-                                @endif
+                            @else
+                                <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex pt-[0.4rem] items-center bg-slate-5000" href="auth/strava"><img class="img-fluid" src="/strava-login-icon.png" /></a>
+                            @endif
                         </x-slot>
 
                         <x-slot name="content">
@@ -113,7 +113,7 @@
 
             <div class="px-4">
                 @auth
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
+                    <div class="font-medium text-base text-orange-500">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
                 @else
                     <a class="border-solid border border-red-600 hover:bg-red-700 hover:text-white text-red-700 py-2 px-4 rounded" href="{{ route('login') }}"> {{ __('Login') }}</a>
                 @endif
