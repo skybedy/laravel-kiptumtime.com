@@ -1,10 +1,10 @@
 <section>
     <header>
-        <h3 class="mt-1 text-md md:text-xl lg:text-2xl text-white"">
+        <h3 class="mt-1 text-sm md:text-xl lg:text-2xl text-white"">
             {{ __('Update your password') }}
         </h3>
 
-        <p class="mt-1 text-lg text-white">
+        <p class="mt-1 text-xs md:text-sm lg:text-lg text-white">
             {{ __('Use a random and unique password') }}
         </p>
     </header>

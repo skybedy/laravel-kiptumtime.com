@@ -5,9 +5,9 @@
     </form>
 
 
-        <h3 class="mt-1 text-xs md:text-xl lg:text-2xl text-white text-center">
+        <h3 class="mt-1 text-sm md:text-xl lg:text-2xl text-white">
             {{ __("If necessary, edit your profile information") }}
-        </p>
+        </h3>
         <form method="post" action="{{ route('profile.update') }}" class="mt-1 space-y-3 border border-gray-900 rounded-md  p-3 sm:p-4 md:p-4  bg-green-700">
             @csrf
             @method('patch')

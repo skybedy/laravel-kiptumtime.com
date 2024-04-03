@@ -14,7 +14,7 @@
 
 
     <div class="grow py-10">
-        <div class="p-4 sm:p-8 border border-white lg:borer border-whte rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl px-3 sm:px-10 lg:py-5 mx-auto">
+        <div class="p-4 sm:p-8 lg:border border-white lg:borer border-whte rounded-md lg:max-w-[60rem] xl:max-w-6xl 2xl:max-w-7xl px-3 sm:px-10 lg:py-5 mx-auto">
 
             <x-h2 style="style-1">
                 {{ __('Profile') }}
