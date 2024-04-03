@@ -10,7 +10,7 @@
     </header>
 
 
-    <form method="post" action="{{ route('password.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('password.update') }}" class="mt-1 space-y-3 border border-gray-900 rounded-md  p-3 sm:p-4 md:p-4  bg-green-700">
         @csrf
         @method('put')
         @php is_null($passwordChanged) ? $label = 'Current password - You still have the default password, which is your email, change it' : $label = 'Current password' @endphp
@@ -34,7 +34,7 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button class="bg-gray-900 hover:bg-gray-800 mt-4 text-xl">{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
                 <p
