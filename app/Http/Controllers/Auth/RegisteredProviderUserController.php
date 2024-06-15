@@ -8,6 +8,7 @@ use App\Models\Flauser;
 use App\Providers\RouteServiceProvider;
 use Exception;
 use App\Events\UserRegistered;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -100,7 +101,8 @@ class RegisteredProviderUserController extends Controller
             'is_email_confirmed' => 1,
         ]);
 
-        event(new UserRegistered($user, $defaultPassword));
+      //  event(new UserRegistered($user, $defaultPassword));
+       // event(new Registered($user));
 
         Auth::login($user);
 
