@@ -7,7 +7,7 @@
             <!-- Logo -->
             <div class="w-[17rem] md:w-72 xl:w-80 shrink-0 flex items-center">
                 <a class="mr-2" href="{{ route('index') }}">
-                    <img class="w-full h-auto" src="/images/kelvin.png" />
+                    <img class="w-full h-auto" src="/images/logo.png" />
                 </a>
                 <div class="text-4xl text-white font-black">
                     <a href="{{ route('index') }}">KiptumTime</a>
