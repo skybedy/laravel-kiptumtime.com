@@ -5,7 +5,7 @@
 <x-guest-layout>
     <div class="w-ful sm:max-w-md my-2 md:mr-5  px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg border border-solid border-gray-200">
         <div class="mt-3">
-            <img class="img-fluid w-full" src="{{$provider}}-login-icon.png" />
+            <img class="img-fluid w-full" src="{{ asset('images/'.$provider.'-logo.png') }}" />
         </div>
         <form method="POST" action="{{ route('register-socialite') }}">
             @csrf

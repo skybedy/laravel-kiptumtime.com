@@ -16,17 +16,8 @@
     </head>
     <body class="font-sans text-gray-900 antialiased">
 
-
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-[#fefdf9]">
-            <div class="mt-5">
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500"  width="80px" height="80px" />
-                </a>
-            </div>
-            <div class="mb-5">
-                 kiptumtime.com
-            </div>
-
+                <a class="text-gray-900 hover:text-orange-500 text-xl underline" href="{{ route('index') }}">kiptumtime.com</a>
             {{ $slot }}
         </body>
 </html>
