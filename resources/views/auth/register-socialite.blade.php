@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route('register-socialite') }}">
             @csrf
              <x-text-input  id="provider_name" type="hidden" name="provider_name" :value="$provider" />
-             <x-text-input  id="providemr_id" type="hidden" name="provider_id" :value="$id" />
+             <x-text-input  id="provider_id" type="hidden" name="provider_id" :value="$id" />
             <div class="mt-4">
                 <x-input-label for="firstname" :value="__('Firstname')" />
                 <x-text-input id="firstname" class="mt-1 block w-full" type="text" name="firstname" :value="$firstname" required autofocus autocomplete="firstname" />

@@ -32,8 +32,8 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '709655243881130',
-        'client_secret' => '422e616f1441a4830096892038f60973',
+        'client_id' => '501944065799712',
+        'client_secret' => '46928497246776839f416dfe70994d02',
         'redirect' => 'https://kiptumtime.com/auth/facebook/callback',
     ],
 
@@ -45,7 +45,7 @@ return [
     'strava' => [
         'client_id' => env('STRAVA_CLIENT_ID'),
         'client_secret' => env('STRAVA_CLIENT_SECRET'),
-        'redirect' => env('APP_URL').'/auth/strava/callback',
+        'redirect' => 'https://virtual-charity.run/auth/strava/callback',
     ],
 
 ];

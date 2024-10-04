@@ -119,7 +119,7 @@ class ResultService
     /**
      *  ziskani vysledkových dat z GPX souboru
      */
-  
+
 
 
 
@@ -651,11 +651,6 @@ class ResultService
                         $registrationId = $registration->registrationExists($event['id'], $request->user()->id)->id;
                         //dd( $registration_id );
 
-
-
-
-
-
                         $this->eventDistance = $event['distance'];
 
                         foreach ($trackPointArray as $trackPoint) {
@@ -857,7 +852,7 @@ class ResultService
             $secondPerMile = round(($finishTimeSec * 1609.3) / $eventDistance);
 
             $timeObj = Carbon::createFromTime(0, 0, 0)->addSeconds($secondPerMile);
-            
+
             if($secondPerMile > 599)
             {
                 return $timeObj->format('i:s');
@@ -867,8 +862,9 @@ class ResultService
                 return substr($timeObj->format('i:s'), 1);
             }
 
-           
+
         }
+        
 
 
         function isTimeInRange($time, $dateEventStartTimestamp, $dateEventEndTimestamp)

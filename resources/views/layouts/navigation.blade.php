@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-gray-900 py-4 md:py-6 lg:py-4">
+<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-gradient-to-b from-gray-800 to-gray-900 py-4 md:py-6 lg:py-4">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto">
 
@@ -7,7 +7,7 @@
             <!-- Logo -->
             <div class="w-[17rem] md:w-72 xl:w-80 shrink-0 flex items-center">
                 <a class="mr-2" href="{{ route('index') }}">
-                    <img class="w-full h-auto" src="/images/logo.png" />
+                    <img class="w-full h-auto" src="/images/logo_old.png" />
                 </a>
                 <div class="text-4xl text-white font-black">
                     <a href="{{ route('index') }}">KiptumTime</a>

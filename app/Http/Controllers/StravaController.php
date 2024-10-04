@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Log;
 
 
 
-class STRAVAController extends Controller
+class StravaController extends Controller
 {
 
     /**
@@ -122,10 +122,10 @@ class STRAVAController extends Controller
         //return $dataStream;
         $finishTime = $resultService->getActivityFinishDataFromSTRAVAWebhook($dataStream, $registration, $userId);
 
-     
+
         $result = new Result();
 
-       
+
 
 
 
@@ -144,10 +144,10 @@ class STRAVAController extends Controller
         $result->pace_mile = $finishTime['pace_mile'];
 
 
-       
-       
-       
-       
+
+
+
+
         DB::beginTransaction();
 
         try
@@ -312,7 +312,7 @@ class STRAVAController extends Controller
 
         $body = $response->body();
         $content = json_decode($body, true);
-    
+
 
         try{
             if(User::firstWhere('strava_id', $content['athlete']['id']))
@@ -338,7 +338,7 @@ class STRAVAController extends Controller
         {
             $parsedUrl = parse_url($request->referer);
 
-            return redirect('https://kiptumtime.com'.$request->query('path'))->with('error',$e->getMessage()); 
+            return redirect('https://kiptumtime.com'.$request->query('path'))->with('error',$e->getMessage());
         }
 
         return redirect(env('APP_URL').$request->query('path'))->with('info','You was succesfully connected to the STRAVA, you can upload activities or they will be uploaded automatically when STRAVA accepts them from Garmin, etc.');

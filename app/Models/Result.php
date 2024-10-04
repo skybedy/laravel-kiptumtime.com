@@ -102,14 +102,16 @@ class Result extends Model
 
     public function getAllUserResults($userId)
     {
-        $events = DB::table('events')->select('id','name')->get()->toArray();
+        
+        //hnusna provizorka, puvodne tady byly vsechny zavody z doby, kdy to bylo jen v jedne databazi, coz ted neni, pak opravit
+        $events = DB::table('events')->where('id',1)->select('id','name')->get()->toArray();
 
         foreach($events as $event){
             $event->results = self::select('results.id', 'results.finish_distance_km','results.finish_distance_mile', 'results.finish_time_date', 'results.pace_km','results.pace_mile','registrations.event_id')
                 ->where('registrations.user_id', $userId)
                 ->where('registrations.event_id', $event->id)
                 ->join('registrations', 'results.registration_id', '=', 'registrations.id')
-                ->join('events', 'registrations.event_id', '=', 'events.id')
+                ->join('events', 'registrations.event_id', '=', second: 'events.id')
                 ->join('categories', 'registrations.category_id', '=', 'categories.id')
                 ->orderBy('results.finish_time_date', 'ASC')
                 ->get()->toArray();

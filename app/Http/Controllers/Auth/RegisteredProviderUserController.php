@@ -101,14 +101,14 @@ class RegisteredProviderUserController extends Controller
             'is_email_confirmed' => 1,
         ]);
 
-      //  event(new UserRegistered($user, $defaultPassword));
-       // event(new Registered($user));
+       event(new UserRegistered($user, $defaultPassword));
+       event(new Registered($user));
 
         Auth::login($user);
 
         if($request->provider_name == 'strava') {
             $path = "";
-            return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read');
+            return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://virtual-charity.run/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read');
         }
         else
         {
@@ -136,6 +136,7 @@ class RegisteredProviderUserController extends Controller
         try {
 
             $user = Socialite::driver($provider)->user();
+            
 
             $finduser = User::where($provider.'_id', $user->id)->first();
 
