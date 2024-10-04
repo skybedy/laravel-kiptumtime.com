@@ -1,21 +1,23 @@
-<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-gradient-to-b from-gray-800 to-gray-900 py-4 md:py-6 lg:py-4">
+<nav x-data="{ open: false }" class="border-b-[10px] sm:border-b-[16px] xl:border-b-[18px] 2xl:border-b-[20px] border-white bg-gradient-to-b from-gray-800 to-gray-900">
     <!-- Primary Navigation Menu -->
     <div class="mx-auto">
 
-        <div class="flex justify-between items-center bg-slate-5000">
+        <div class="flex justify-between items-center py-6 px-5">
 
             <!-- Logo -->
-            <div class="w-[17rem] md:w-72 xl:w-80 shrink-0 flex items-center">
-                <a class="mr-2" href="{{ route('index') }}">
-                    <img class="w-full h-auto" src="/images/logo_old.png" />
+            <div class="w-[17rem] md:w-72 xl:w-96 space-x-2 flex items-center">
+
+                <a href="{{ route('index') }}">
+                    <img class="w-full h-auto" src="/images/logo.png" />
                 </a>
+
                 <div class="text-4xl text-white font-black">
-                    <a href="{{ route('index') }}">KiptumTime</a>
+                    <a href="{{ route('index') }}">kiptumtime.com</a>
                 </div>
             </div>
 
             <!-- Navigation Links -->
-            <div class="hidden lg:flex space-x-2 xl:space-x-8 2xl:space-x-10 sm:-my-px sm:ms-10">
+            <div class="hidden lg:flex space-x-2 xl:space-x-8 2xl:space-x-10 items-center">
                 <x-nav-link :href="route('index')" :active="request()->routeIs('index')" >
                     {{ __('messages.home') }}
                 </x-nav-link>
@@ -36,7 +38,7 @@
                 </x-nav-link>
 
                 <!-- Settings Dropdown -->
-                <div class="hidden md:flex pr-2 bg-slate-3000">
+                <div class="hidden md:block">
 
                     <x-dropdown>
 
@@ -46,7 +48,7 @@
                                     <div>{{ Auth::user()->firstname }}</div>
                                 </button>
                             @else
-                                <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex pt-[0.4rem] items-center bg-slate-5000" href="auth/strava"><img class="img-fluid" src="/strava-login-icon.png" /></a>
+                                <a class="bg-gradient-to-b from-orange-500 to-orange-600 hover:bg-gradient-to-b hover:from-orange-600 hover:to-orange-700 p-3 rounded text-lg text-white font-black" href="{{ route('login') }}">Login/Register</a>
                             @endif
                         </x-slot>
 
