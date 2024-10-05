@@ -348,12 +348,17 @@ class StravaController extends Controller
 
     public function authorizeSTRAVA(Request $request)
     {
+
         $referer = $request->header('Referer');
+        $user_id = $request->user()->id;
 
-        $parsedUrl = parse_url($referer);
+        //$parsedUrl = parse_url($referer);
 
-        $path = $parsedUrl['path'];
+        //$path = $parsedUrl['path'];
 
-        return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read');
+
+        //return redirect('https://www.strava.com/oauth/authorize?client_id=117954&response_type=code&redirect_uri=https://kiptumtime.com/redirect-strava?path='.$path.'&approval_prompt=force&scope=activity:read');
+
+        return redirect("https://virtual-charity.run/api/authorize-strava/kiptumtime?callback=$referer&user_id=$user_id");
     }
 }
