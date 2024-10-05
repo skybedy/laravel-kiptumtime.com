@@ -53,7 +53,7 @@ class EventController extends Controller
         $connectingStrava = true;
 
 
-        if(is_null($user::where('id',$request->user()->id)->value('strava_scope')))
+        if(is_null($user::where('id',$request->user()->id)->value('strava_id')))
         {
             $connectingStrava = false;
         }
