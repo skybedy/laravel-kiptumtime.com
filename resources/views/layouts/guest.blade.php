@@ -17,7 +17,7 @@
     <body class="font-sans text-gray-900 antialiased">
 
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-[#fefdf9]">
-                <a class="text-gray-900 hover:text-orange-500 text-xl underline" href="{{ route('index') }}">kiptumtime.com</a>
+                <a class="text-gray-900 hover:text-orange-500 text-xl underline" href="{{ route('index') }}">kiptumtime.run</a>
             {{ $slot }}
         </body>
 </html>

@@ -12,7 +12,7 @@
                 </a>
 
                 <div class="text-4xl text-white font-black">
-                    <a href="{{ route('index') }}">kiptumtime.com</a>
+                    <a href="{{ route('index') }}">kiptumtime.run</a>
                 </div>
             </div>
 

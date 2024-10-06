@@ -34,7 +34,7 @@ return [
     'facebook' => [
         'client_id' => '501944065799712',
         'client_secret' => '46928497246776839f416dfe70994d02',
-        'redirect' => 'https://kiptumtime.com/auth/facebook/callback',
+        'redirect' => env('APP_URL').'/auth/facebook/callback',
     ],
 
     'google' => [
