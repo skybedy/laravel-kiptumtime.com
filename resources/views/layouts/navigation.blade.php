@@ -2,10 +2,10 @@
     <!-- Primary Navigation Menu -->
     <div class="mx-auto">
 
-        <div class="flex justify-between items-center py-6 px-5">
+        <div class="flex justify-between items-center py-3 px-2 md:px-5 bg-re-500">
 
             <!-- Logo -->
-            <div class="w-[17rem] md:w-72 xl:w-96 space-x-2 flex items-center">
+            <div class="w-[21rem] sm:w-[22rem] space-x-2 flex items-center">
 
                 <a href="{{ route('index') }}">
                     <img class="w-full h-auto" src="/images/logo.png" />
@@ -86,6 +86,11 @@
 
         </div>
 
+        <div class="text-white text-center text-xs sm:text-sm lg:text-xs xl:text-base border-y border-white  p-2   mb-3">
+            The Kiptumtime is a running challenge based on Kelvin's world record time 2:00:35 and in this challenge you can try to cover as much distance as possible within this time.
+
+        </div>
+
     </div>
 
     <!-- Responsive Navigation Menu -->
@@ -110,35 +115,41 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200">
+        <div class="py-2 border-t border-gray-200">
 
             <div class="px-3">
                 @auth
                     <div class="font-medium text-lg text-orange-500">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
+
+                    <div class="mt-3 space-y-1">
+                        <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
+                            {{ __('Profil') }}
+                        </x-responsive-nav-link>
+                        <x-responsive-nav-link :href="route('result.manage')" :active="request()->routeIs('result.manage')">
+                             {{ __('Result manage') }}
+                        </x-responsive-nav-link>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-responsive-nav-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                 {{ __('Logout') }}
+                            </x-responsive-nav-link>
+                        </form>
+                    </div>
+
+
+
                 @else
-                    <a class="w-48 lg:w-52 xl:w-60 2xl:w-72 h-auto inline-flex" href="auth/strava"><img class="img-fluid" src="/strava-login-icon.png" /></a>
+                    <a class="inline-block bg-gradient-to-b from-orange-500 to-orange-600 hover:bg-gradient-to-b hover:from-orange-600 hover:to-orange-700 p-3 rounded text-lg text-white font-black" href="{{ route('login') }}">Login/Register</a>
+
                 @endif
             </div>
 
-            <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
-                    {{ __('Profil') }}
-                </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('result.manage')" :active="request()->routeIs('result.manage')">
-                     {{ __('Result manage') }}
-                </x-responsive-nav-link>
 
-                <!-- Authentication -->
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-
-                    <x-responsive-nav-link :href="route('logout')"
-                            onclick="event.preventDefault();
-                            this.closest('form').submit();">
-                         {{ __('Logout') }}
-                    </x-responsive-nav-link>
-                </form>
-            </div>
 
         </div>
 
