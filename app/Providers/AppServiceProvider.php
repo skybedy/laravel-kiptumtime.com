@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Services\ResultService;
 use Illuminate\Support\ServiceProvider;
+use Stripe\StripeClient;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +28,14 @@ class AppServiceProvider extends ServiceProvider
 
             return new ResultService($app->request->eventId);
         });*/
+
+
+        $this->app->singleton(StripeClient::class, function () {
+
+            return new StripeClient(env("STRIPE_CLIENT_SECRET"));
+
+        });
+
     }
 
     /**

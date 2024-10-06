@@ -51,7 +51,6 @@ Route::get('/event/{eventId}/startlist', [EventController::class, 'startlistInde
 Route::get('/result/{resultId}/map', [ResultController::class, 'resultMap'])->name('result.map');
 Route::get('/event/result/{registrationId}', [ResultController::class, 'resultUser'])->name('result.user');
 
-Route::get('/registration/{eventId}', [RegistrationController::class, 'index'])->name('registration.index');
 Route::get('/result/{eventId}', [ResultController::class, 'index'])->name('result.index');
 
 Route::get('/dashboard', function () {
@@ -63,8 +62,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/registration/create/{eventId}', [RegistrationController::class, 'create'])->name('registration.create');
-
+    Route::get('/registration/show', [RegistrationController::class, 'show'])->name('registration.signin');
+    Route::get('/registration/checkout', [RegistrationController::class, 'checkout'])->name('registration.checkout');
 });
+
+
+Route::get('/registration/{eventId}', [RegistrationController::class, 'index'])->name('registration.index');
 
 Route::controller(RegisteredProviderUserController::class)->group(function () {
     Route::get('auth/{provider}', 'redirectToProvider')->name('auth.provider');

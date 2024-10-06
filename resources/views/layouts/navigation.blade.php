@@ -18,8 +18,8 @@
 
             <!-- Navigation Links -->
             <div class="hidden lg:flex space-x-2 xl:space-x-8 2xl:space-x-10 items-center">
-                <x-nav-link :href="route('index')" :active="request()->routeIs('index')" >
-                    {{ __('messages.home') }}
+                <x-nav-link :href="route('registration.signin')" :active="request()->routeIs('registration.signin')" >
+                    {{ __('messages.sign_in') }}
                 </x-nav-link>
 
                 <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')">
@@ -87,7 +87,7 @@
         </div>
 
         <div class="text-white text-center text-xs sm:text-sm lg:text-xs xl:text-base border-y border-white  p-2   mb-3">
-            The Kiptumtime is a running challenge based on Kelvin's world record time 2:00:35 and in this challenge you can try to cover as much distance as possible within this time.
+            The Kiptumtime platform is a running challenge based on Kelvin's world record time 2:00:35 and in this challenge you can try to cover as much distance as possible within this time.
 
         </div>
 
@@ -98,7 +98,7 @@
 
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
-                 {{ __('messages.home') }}
+                 {{ __('messages.sign_in') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')">
                  {{ __('messages.results') }}

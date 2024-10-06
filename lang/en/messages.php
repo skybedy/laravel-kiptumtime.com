@@ -7,6 +7,7 @@ return [
     'results' => 'Results',
     'results_upload' => 'Upload Results',
     'how_it_works' => 'How It Works',
+    'sign_in' => 'Sign In Now',
     'strava_link_insert_text' => 'Insert your Strava link below',
     'forum' => 'Forum',
     'Pokud jste se ocitli na této stránce, tak tu jste patrně poprvé a v tom případě je jednou jedinkrát potřeba doplnit rok narození a pohlaví pro správné zařazení do věkové kategorie.' => 'If you are on this page, you are probably here for the first time and in that case it is necessary to fill in the year',
