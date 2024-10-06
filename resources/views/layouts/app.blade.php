@@ -22,6 +22,7 @@
 
         <script src="https://api.mapy.cz/loader.js"></script>
         <script type="text/javascript">Loader.load();</script>
+        <script src="https://js.stripe.com/v3/"></script>
 
         <style>
             #m img {
@@ -66,6 +67,21 @@ input[type=file]::file-selector-button:hover {
         <div class="flex flex-col justify-between min-h-screen bg-gradient-to-b from-red-700 to-red-800">
             @include('layouts.navigation')
             <!-- Page Content -->
+            @if (session('success'))
+            <x-flash-message type="success" :message="session('success')" />
+        @endif
+
+        @if (session('error'))
+            <x-flash-message type="error" :message="session('error')" />
+        @endif
+
+        @if (session('warning'))
+            <x-flash-message type="warning" :message="session('warning')" />
+        @endif
+
+        @if (session('info'))
+            <x-flash-message type="info" :message="session('info')" />
+        @endif
 
                 {{ $slot }}
 

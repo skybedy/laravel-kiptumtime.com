@@ -6,8 +6,8 @@
 
             <x-h2 style="style-1">All proceeds go to charity</x-h2>
             <x-p style="style-1">
-            
-            
+
+
              Kelvin was Kenyan and we think it would be right if any funds raised through this platform went back to Kenya and based on this fact we decided that any funds raised will be donated to charity.<br>
 To this end, we have partnered with a young Kenyan non-profit <a class="underline" href="https://www.blessedcitron.com">Blessed Citron</a> and it is to them that we have decided to donate any funds
             </x-p>
@@ -25,14 +25,13 @@ Why this centre Matters:
     <li class="mx-5">Building Confidence: Through artistic expression, children will develop skills, confidence, and resilience that can help them overcome life's challenges.</li>
     <li class="mx-5">Creating Community: The centre will be a place of belonging, giving children from vulnerable communities a sense of pride, purpose, and hope for the future.</li>
 </ul>
-<div class="text-white text-3xl text-center mt-8"> Your participation today will make a difference.</div> 
+<div class="text-white text-3xl text-center mt-8"> Your participation today will make a difference.</div>
  </x-p>
 
-           
 
 
-            <x-h2 style="style-1">Video</x-h2>
-            <div class="h-[400px]"></div>
+
+
 
             <div class="bg-white mt-5 p-5 rounded-md">
                 <a class="block bg-gradient-to-b from-gray-800 to-gray-900 hover:bg-gradient-to-b hover:from-gray-700 hover:to-gray-800 text-4xl text-center p-10 text-white font-black rounded-md shadow-lg" href="{{ route('registration.checkout') }}">SIGN IN TO RACE AND PAY $10 </a>

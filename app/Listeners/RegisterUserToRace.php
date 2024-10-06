@@ -28,6 +28,9 @@ class RegisterUserToRace
      */
     public function handle(UserRegistered $event): void
     {
+
+
+        /*
         $category = new Category();
 
         $age = date("Y") - $event->user->birth_year;
@@ -43,7 +46,7 @@ class RegisterUserToRace
             'user_id' => $event->user->id,
 
             'category_id' => $categoryId,
-        ]);
+        ]);*/
 
         Mail::to($event->user->email)->send(new TestEmail($event->defaultPassword));
 

@@ -61,11 +61,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/registration/create/{eventId}', [RegistrationController::class, 'create'])->name('registration.create');
-
+    Route::get('/registration/store/{eventId}', [RegistrationController::class, 'store'])->name('registration.store');
     Route::get('/registration/checkout', [RegistrationController::class, 'checkout'])->name('registration.checkout');
+    Route::get('/registration/show', [RegistrationController::class, 'show'])->name('registration.signin');
 });
-Route::get('/registration/show', [RegistrationController::class, 'show'])->name('registration.signin');
 
 Route::get('/registration/{eventId}', [RegistrationController::class, 'index'])->name('registration.index');
 

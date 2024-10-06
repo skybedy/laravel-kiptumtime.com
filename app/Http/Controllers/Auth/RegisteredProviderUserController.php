@@ -51,7 +51,7 @@ class RegisteredProviderUserController extends Controller
     {
 
         $providerNameId = false;
-      
+
         switch ($request->provider_name) {
             case 'facebook':
                 $providerNameId = 'facebook_id';
@@ -102,6 +102,7 @@ class RegisteredProviderUserController extends Controller
         ]);
 
        event(new UserRegistered($user, $defaultPassword));
+
        event(new Registered($user));
 
         Auth::login($user);
@@ -115,7 +116,7 @@ class RegisteredProviderUserController extends Controller
             return redirect(RouteServiceProvider::HOME)->with('info', 'You have been successfully logged in, confirmation information will be sent to e-mail '.$request->email);
 
         }
-       
+
     }
 
     /**
@@ -136,7 +137,7 @@ class RegisteredProviderUserController extends Controller
         try {
 
             $user = Socialite::driver($provider)->user();
-            
+
 
             $finduser = User::where($provider.'_id', $user->id)->first();
 
