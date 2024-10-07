@@ -75,12 +75,15 @@ class RegistrationController extends Controller
 
         $category_id = $category->categoryChoice($gender, $age);
 
-        if (! $registration->registrationExists($eventId, $userId)) {
+        if (! $registration->registrationExists($eventId, $userId))
+        {
             $registration->create([
                 'event_id' => $eventId,
                 'user_id' => $userId,
                 'category_id' => $category_id,
             ]);
+
+            session(['registered_for_race' => $eventId]);
 
             session()->flash('success', 'You have been successfully registered for the race');
         }

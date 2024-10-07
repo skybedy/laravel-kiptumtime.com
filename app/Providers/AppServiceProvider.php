@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Services\ResultService;
 use Illuminate\Support\ServiceProvider;
 use Stripe\StripeClient;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
 
             return new StripeClient(env("STRIPE_CLIENT_SECRET"));
 
+
         });
 
     }
@@ -43,6 +45,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('*', function ($view) {
+            $view->with('registered_for_race', session('registered_for_race'));
+        });
     }
 }

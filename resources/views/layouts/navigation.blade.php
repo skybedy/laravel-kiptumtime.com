@@ -18,9 +18,15 @@
 
             <!-- Navigation Links -->
             <div class="hidden lg:flex space-x-2 xl:space-x-8 2xl:space-x-10 items-center">
+
+                @if(!$registered_for_race)
                 <x-nav-link :href="route('registration.signin')" :active="request()->routeIs('registration.signin')" >
                     {{ __('messages.sign_in') }}
                 </x-nav-link>
+
+                @endif
+
+
 
                 <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')">
                     {{ __('messages.results') }}
