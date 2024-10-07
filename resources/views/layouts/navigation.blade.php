@@ -2,7 +2,10 @@
     <!-- Primary Navigation Menu -->
     <div class="mx-auto">
 
+
+
         <div class="flex justify-between items-center py-3 px-2 md:px-5">
+
 
             <!-- Logo -->
             <div class="w-[21rem] sm:w-[22rem] lg:w-[24rem] space-x-2 flex items-center">
