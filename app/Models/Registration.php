@@ -16,7 +16,7 @@ class Registration extends Model
 
     public function registrationExists($eventId, $userId)
     {
-        return self::where(['event_id' => $eventId, 'user_id' => $userId])->first('id');
+        return self::where(['event_id' => $eventId, 'user_id' => $userId])->first(['id','event_id']);
     }
 
     public function deleteRegistrationsByUser($userId)

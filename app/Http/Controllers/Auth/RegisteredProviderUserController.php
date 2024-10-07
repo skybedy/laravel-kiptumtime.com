@@ -17,6 +17,7 @@ use Illuminate\View\View;
 use Laravel\Socialite\Facades\Socialite;
 use PeterColes\Countries\CountriesFacade as Countries;
 use Illuminate\Support\Str;
+use App\Models\Registration;
 
 
 class RegisteredProviderUserController extends Controller
@@ -132,7 +133,7 @@ class RegisteredProviderUserController extends Controller
      *
      * @return void
      */
-    public function handleProviderCallback(string $provider, Request $request)
+    public function handleProviderCallback(string $provider, Request $request,Registration $registration)
     {
         try {
 
@@ -144,6 +145,24 @@ class RegisteredProviderUserController extends Controller
             if ($finduser) {
 
                 Auth::login($finduser);
+
+
+                $registration_exists = $registration->registrationExists(env('ACTIVE_RACE_ID'), $finduser->id);
+
+                if(!is_null($registration_exists))
+                {
+                    $event_id = $registration_exists->event_id;
+
+                    session(['registered_for_race' => $event_id]);
+                }
+
+
+                if (isset($registration->registrationExists(env('ACTIVE_RACE_ID'), $finduser->id)->event_id))
+                {
+                    $event_id = $registration->registrationExists(env('ACTIVE_RACE_ID'), $request->user()->id)->event_id;
+
+
+                }
 
                 return redirect()->intended('/');
 

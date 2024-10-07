@@ -2,10 +2,10 @@
     <!-- Primary Navigation Menu -->
     <div class="mx-auto">
 
-        <div class="flex justify-between items-center py-3 px-2 md:px-5 bg-re-500">
+        <div class="flex justify-between items-center py-3 px-2 md:px-5">
 
             <!-- Logo -->
-            <div class="w-[21rem] sm:w-[22rem] space-x-2 flex items-center">
+            <div class="w-[21rem] sm:w-[22rem] lg:w-[24rem] space-x-2 flex items-center">
 
                 <a href="{{ route('index') }}">
                     <img class="w-full h-auto" src="/images/logo.png" />
@@ -92,10 +92,6 @@
 
         </div>
 
-        <div class="text-white text-center text-xs sm:text-sm lg:text-xs xl:text-base border-y border-white  p-2   mb-3">
-            The Kiptumtime platform is a running challenge based on Kelvin's world record time 2:00:35 and in this challenge you can try to cover as much distance as possible within this time.
-
-        </div>
 
     </div>
 

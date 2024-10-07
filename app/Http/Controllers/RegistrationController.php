@@ -20,8 +20,15 @@ class RegistrationController extends Controller
     }
 
 
-    public function show()
+    public function show(Request $request,Registration $registration)
     {
+        $registration_exists = $registration->registrationExists(env('ACTIVE_RACE_ID'), $request->user()->id);
+
+        if(!is_null($registration_exists))
+        {
+            return redirect()->route('index')->with('error', 'You are already registered for this race');
+        }
+
         return view('registrations.show');
     }
 
@@ -89,7 +96,7 @@ class RegistrationController extends Controller
         }
         else
         {
-            session()->flash('error', 'Na tento závod už jsme vás zaregistrovali');
+            session()->flash('error', 'You are already registered for this race');
         }
 
         return redirect()->route('index');
