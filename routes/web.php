@@ -62,7 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/registration/store/{eventId}', [RegistrationController::class, 'store'])->name('registration.store');
-    Route::get('/registration/checkout', [RegistrationController::class, 'checkout'])->name('registration.checkout');
+    Route::post('/registration/checkout', [RegistrationController::class, 'checkout'])->name('registration.checkout');
     Route::get('/registration/show', [RegistrationController::class, 'show'])->name('registration.signin');
 });
 

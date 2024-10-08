@@ -8,13 +8,13 @@
 
 
             <!-- Logo -->
-            <div class="w-[21rem] sm:w-[22rem] lg:w-[24rem] space-x-2 flex items-center">
+            <div class="w-[21rem] sm:w-[22rem] lg:w-[24rem] space-x-2 flex items-center me-8 sm:me-0">
 
                 <a href="{{ route('index') }}">
                     <img class="w-full h-auto" src="/images/logo.png" />
                 </a>
 
-                <div class="text-4xl text-white font-black">
+                <div class="text-2xl sm:text-4xl text-white font-black">
                     <a href="{{ route('index') }}">kiptumtime.run</a>
                 </div>
             </div>

@@ -218,6 +218,27 @@ $(document).on('click', 'a[href*="/event/result/"]', function(e) {
 
 
 
+  const amountInput = document.getElementById('amount');
+  const displayAmount = document.getElementById('display-amount');
+
+  // Function to update the span dynamically
+  amountInput.addEventListener('input', function() {
+      let value = amountInput.value;
+
+      // Set a maximum value of 10
+      if (value < 10) {
+          value = 10;
+          amountInput.value = 10;
+      }
+
+      // Update the span with the current value
+      displayAmount.textContent = value;
+  });
+
+
+
+
+
 
 
 });

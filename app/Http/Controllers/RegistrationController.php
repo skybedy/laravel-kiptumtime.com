@@ -35,12 +35,23 @@ class RegistrationController extends Controller
 
     public function checkout(Request $request,StripeClient $stripe)
     {
+
+
+        $myPrice = $request['price'];
+
         $price =  $stripe->prices->retrieve(env('STRIPE_PRICE_ID'));
 
         // Vytvoření Stripe Checkout Session
         $checkout_session = $stripe->checkout->sessions->create([
             'line_items' => [[
-                'price' => env('STRIPE_PRICE_ID'), // Production Price ID
+                'price_data' => [
+                    'currency' => 'usd', // Nastavení měny na dolary
+                    'product_data' => [
+                        'name' => 'Your Product Name',
+                    ],
+                    'unit_amount' => $myPrice, // Převod ceny na centy
+                ],
+
                 'quantity' => 1,
             ]],
 
