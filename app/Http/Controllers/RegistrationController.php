@@ -36,10 +36,11 @@ class RegistrationController extends Controller
     public function checkout(Request $request,StripeClient $stripe)
     {
 
-
         $myPrice = $request['price'];
 
         $price =  $stripe->prices->retrieve(env('STRIPE_PRICE_ID'));
+
+        $img = asset('images/blessed-citron-logo.jpeg');
 
         // Vytvoření Stripe Checkout Session
         $checkout_session = $stripe->checkout->sessions->create([
@@ -47,9 +48,11 @@ class RegistrationController extends Controller
                 'price_data' => [
                     'currency' => 'usd', // Nastavení měny na dolary
                     'product_data' => [
-                        'name' => 'Your Product Name',
+                        'name' => 'Starting fee for The Kiptumtime race',
+                        'description' => 'This fee is non-refundable and all proceeds will be donated to Blessed Citron Foundation',
+                        'images' => ['https://kiptumtime.run/images/blessed-citron-logo.jpeg'],
                     ],
-                    'unit_amount' => $myPrice, // Převod ceny na centy
+                    'unit_amount' => $myPrice * 100, // Převod ceny na centy
                 ],
 
                 'quantity' => 1,
