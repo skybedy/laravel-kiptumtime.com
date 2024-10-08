@@ -45,11 +45,8 @@ Why this centre Matters:
 
         </div>
 
-
-
-
     <div class="bg-white mt-5 p-5 rounded-md">
-        <button type="submit" class="block w-full bg-gradient-to-b from-gray-800 to-gray-900 hover:bg-gradient-to-b hover:from-gray-700 hover:to-gray-800 text-3xl md:text-4xl text-center p-10 text-white font-black rounded-md shadow-lg">SIGN IN TO RACE AND PAY $<span id="display-amount">10</span></button>
+        <button type="submit" class="block w-full bg-gradient-to-b from-gray-800 to-gray-900 hover:bg-gradient-to-b hover:from-gray-700 hover:to-gray-800 text-3xl md:text-4xl text-center p-10 text-white font-black rounded-md shadow-lg">ENTER RACE AND DONATE $<span id="display-amount">10</span></button>
     </div>
 
 </form>
