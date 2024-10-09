@@ -23,17 +23,18 @@
             <div class="hidden lg:flex space-x-2 xl:space-x-8 2xl:space-x-10 items-center">
 
                 @if(!$registered_for_race)
-                <x-nav-link :href="route('registration.signin')" :active="request()->routeIs('registration.signin')" >
-                    {{ __('messages.sign_in') }}
-                </x-nav-link>
-
+                    <x-nav-link :href="route('registration.signin')" :active="request()->routeIs('registration.signin')" >
+                        {{ __('messages.sign_in') }}
+                    </x-nav-link>
                 @endif
+
 
 
 
                 <x-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')">
                     {{ __('messages.results') }}
                 </x-nav-link>
+
 
                 <x-nav-link :href="route('event.upload-url.create',['eventId' => 1])" :active="request()->routeIs('event.upload-url.create')" >
                     {{ __('messages.results_upload') }}
@@ -102,9 +103,12 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden lg:hidden">
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
-                 {{ __('messages.sign_in') }}
-            </x-responsive-nav-link>
+            @if(!$registered_for_race)
+                <x-responsive-nav-link :href="route('index')" :active="request()->routeIs('index')">
+                     {{ __('messages.sign_in') }}
+                </x-responsive-nav-link>
+            @endif
+
             <x-responsive-nav-link :href="route('event.result.index',['eventId' => 1])" :active="request()->routeIs('event.result.index')">
                  {{ __('messages.results') }}
             </x-responsive-nav-link>
@@ -124,7 +128,7 @@
 
             <div class="px-3">
                 @auth
-                    <div class="font-medium text-lg text-orange-500">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
+                    <div class="font-medium text-xl text-orange-500">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
 
                     <div class="mt-3 space-y-1">
                         <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
